@@ -13,7 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/fondonav"
-        android:visibility="invisible">
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textViewTitulo"
@@ -72,12 +75,13 @@
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="Introduce tu nombre"
+        android:hint="@string/introduce_tu_nombre"
         android:inputType="text"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextPasswordUsuario"
@@ -86,74 +90,81 @@
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="Introduce tu contraseña"
+        android:hint="@string/introduce_tu_contrase_a"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNombreUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombreUsuario"
+        android:autofillHints="" />
+
+    <Spinner
+        android:id="@+id/spinnerGenero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordUsuario" />
+
+    <Spinner
+        android:id="@+id/spinnerTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinnerGenero"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordUsuario" />
+
+    <EditText
+        android:id="@+id/editTextCantidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/introduce_la_cantidad"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonGrupo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
-        android:layout_width="fill_parent"
+        android:id="@+id/radioButtonGrupo"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxCondiciones"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordUsuario">
+        app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
+            android:id="@+id/radioButtonSocio"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/soy_socio_reclamo_mi_descuento" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNoSocio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_soy_socio_no_tengo_descuento" />
     </RadioGroup>
 
     <CheckBox
         android:id="@+id/checkBoxCondiciones"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="354dp" />
-
-    <Spinner
-        android:id="@+id/spinnerGenero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:minHeight="48dp"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="415dp" />
-
-    <Spinner
-        android:id="@+id/spinnerTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:minHeight="48dp"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="483dp" />
-
-    <EditText
-        android:id="@+id/editTextCantidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:ems="10"
-        android:hint="Introduce la cantidad"
-        android:inputType="number"
-        android:minHeight="48dp"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="449dp" />
+        android:text="@string/acepto_los_t_rminos_y_condiciones"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonComprar"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintButtonSize" />
 
     <Button
         android:id="@+id/buttonComprar"
@@ -161,8 +172,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:minHeight="48dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="539dp" />
+        android:text="@string/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxCondiciones" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

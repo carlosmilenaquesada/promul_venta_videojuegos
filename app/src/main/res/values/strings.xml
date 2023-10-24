@@ -3,4 +3,11 @@
     <string name="logotipo">Logotipo</string>
     <string name="wellplayed">WellPlayed</string>
     <string name="your_videogames_store">Your videogames store</string>
+    <string name="button">Button</string>
+    <string name="acepto_los_t_rminos_y_condiciones">Acepto los términos y condiciones.</string>
+    <string name="introduce_la_cantidad">Introduce la cantidad</string>
+    <string name="introduce_tu_nombre">Introduce tu nombre</string>
+    <string name="introduce_tu_contrase_a">Introduce tu contraseña</string>
+    <string name="no_soy_socio_no_tengo_descuento">No soy socio, no tengo descuento</string>
+    <string name="soy_socio_reclamo_mi_descuento">Soy socio, reclamo mi descuento</string>
 </resources>
