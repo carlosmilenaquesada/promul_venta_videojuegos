@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutGeneral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -10,51 +11,55 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
+        android:id="@+id/constraintLayoutCabecera"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/fondonav"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNombreUsuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textViewTituloCabecera"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="184dp"
-            android:background="@color/black"
-            android:text="@string/wellplayed"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textViewSubtituloCabecera"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewLogotipo"
-            app:layout_constraintHorizontal_bias="0.175"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <TextView
-            android:id="@+id/textViewSubtituloCabecera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="65dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="157dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black"
-            android:text="@string/your_videogames_store"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textStyle="bold|italic"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageViewLogotipo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTituloCabecera" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textViewTituloCabecera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@color/material_dynamic_neutral10"
+                android:shadowColor="#473535"
+                android:text="@string/wellplayed"
+                android:textAlignment="center"
+                android:textColor="@color/material_dynamic_neutral_variant70"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewSubtituloCabecera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@color/material_dynamic_neutral10"
+                android:shadowColor="#473535"
+                android:text="@string/subtitulo_cabecera"
+                android:textAlignment="center"
+                android:textColor="@color/material_dynamic_neutral_variant70"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageViewLogotipo"
@@ -73,30 +78,30 @@
         android:id="@+id/editTextNombreUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
+        android:height="@dimen/altura_cuadro_texto_input"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/introduce_tu_nombre"
         android:inputType="text"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/altura_cuadro_texto_input"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutCabecera"
         tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/editTextPasswordUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:height="@dimen/altura_cuadro_texto_input"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/introduce_tu_contrase_a"
         android:inputType="textPassword"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/altura_cuadro_texto_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNombreUsuario" />
 
@@ -105,46 +110,42 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:height="48dp"
+        android:height="@dimen/altura_cuadro_texto_info"
         android:text="@string/plataforma"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordUsuario" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/spinnerPlataforma"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewGenero"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:height="48dp"
+        android:height="@dimen/altura_cuadro_texto_info"
         android:text="@string/g_nero"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPlataforma" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/spinnerGenero"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewTitulo"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:height="48dp"
+        android:height="@dimen/altura_cuadro_texto_info"
         android:text="@string/t_tulo"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGenero" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/spinnerTitulo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerPlataforma"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/altura_cuadro_texto_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewPlataforma"
         app:layout_constraintTop_toBottomOf="@+id/editTextPasswordUsuario" />
@@ -153,11 +154,10 @@
         android:id="@+id/spinnerGenero"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/altura_cuadro_texto_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewGenero"
         app:layout_constraintTop_toBottomOf="@+id/spinnerPlataforma" />
@@ -166,35 +166,64 @@
         android:id="@+id/spinnerTitulo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/altura_cuadro_texto_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewTitulo"
         app:layout_constraintTop_toBottomOf="@+id/spinnerGenero" />
 
     <EditText
         android:id="@+id/editTextCantidad"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        android:autofillHints=""
+        android:height="@dimen/altura_cuadro_texto_input"
         android:ems="10"
         android:hint="@string/introduce_la_cantidad"
         android:inputType="number"
+        android:minHeight="@dimen/altura_cuadro_texto_input"
+        app:layout_constraintBottom_toTopOf="@+id/editTextFechaEntrega"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextFechaEntrega"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:focusableInTouchMode="false"
+        android:ems="10"
+        android:hint="@string/fecha_entrega_hint"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:onClick="mostrarCalendario"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonGrupo"
+        app:layout_constraintEnd_toStartOf="@+id/editTextHoraEntrega"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextHoraEntrega"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="@string/hora_entrega_hint"
+        android:inputType="text"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/radioButtonGrupo"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextFechaEntrega" />
 
     <RadioGroup
         android:id="@+id/radioButtonGrupo"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/checkBoxCondiciones"
@@ -204,24 +233,28 @@
             android:id="@+id/radioButtonSocio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:height="@dimen/altura_cuadro_texto_input"
             android:checked="false"
+            android:minHeight="@dimen/altura_cuadro_texto_input"
             android:text="@string/soy_socio_reclamo_mi_descuento" />
 
         <RadioButton
             android:id="@+id/radioButtonNoSocio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:height="@dimen/altura_cuadro_texto_input"
             android:checked="true"
+            android:minHeight="@dimen/altura_cuadro_texto_input"
             android:text="@string/no_soy_socio_no_tengo_descuento" />
     </RadioGroup>
 
     <CheckBox
         android:id="@+id/checkBoxCondiciones"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
+        android:height="@dimen/altura_cuadro_texto_input"
         android:checked="false"
         android:text="@string/acepto_los_t_rminos_y_condiciones"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -232,9 +265,9 @@
         android:id="@+id/buttonSiguiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
+        android:height="@dimen/altura_cuadro_texto_input"
         android:minHeight="48dp"
         android:onClick="irSiguiente"
         android:text="@string/siguiente"

@@ -13,12 +13,6 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         Intent intent = new Intent();
-        if(intent == null){
-            Log.d("vacio", "está vacio");
 
-        }else{
-
-            Log.d("vacio", "está lleno");
-        }
     }
 }

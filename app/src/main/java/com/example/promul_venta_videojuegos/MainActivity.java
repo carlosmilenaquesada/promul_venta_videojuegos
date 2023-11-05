@@ -6,7 +6,6 @@ import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaPla
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	Spinner spinnerTitulo;
 	int titulo = 0;
 	EditText editTextCantidad;
+	EditText editTextFechaEntrega;
+	EditText editTextHoraEntrega;
 	RadioGroup radioButtonGrupo;
 	RadioButton radioButtonSocio;
 	RadioButton radioButtonNoSocio;
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		spinnerTitulo = findViewById(R.id.spinnerTitulo);
 		adapterTitulo = configurarAdaptadoresSpinnerMutable(spinnerTitulo);
 		editTextCantidad = findViewById(R.id.editTextCantidad);
+		editTextFechaEntrega = findViewById(R.id.editTextFechaEntrega);
+		editTextHoraEntrega = findViewById(R.id.editTextHoraEntrega);
 		radioButtonGrupo = findViewById(R.id.radioButtonGrupo);
 		radioButtonSocio = findViewById(R.id.radioButtonSocio);
 		radioButtonNoSocio = findViewById(R.id.radioButtonNoSocio);
@@ -80,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				String.valueOf(spinnerPlataforma.getSelectedItem()),
 				String.valueOf(spinnerGenero.getSelectedItem()),
 				String.valueOf(spinnerTitulo.getSelectedItem()), cantidad,
-				radioButtonSocio.isSelected());
+				String.valueOf(editTextFechaEntrega.getText()),
+				String.valueOf(editTextHoraEntrega.getText()), radioButtonSocio.isSelected());
 		outState.putSerializable(PRIMER_ACTIVITY_COMPRA, compra);
 	}
 
@@ -132,7 +136,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			hayErrores = true;
 			Toast.makeText(this, "Debe aceptar las condiciones.", Toast.LENGTH_SHORT).show();
 		}
-		if(String.valueOf(editTextNombreUsuario.getText()).isEmpty()){
+		String nombreUsuario = String.valueOf(editTextNombreUsuario.getText());
+		if(nombreUsuario.isEmpty()){
 			hayErrores = true;
 			editTextNombreUsuario.setError("El nombre no puede estar vacío.");
 		}
@@ -140,22 +145,40 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			hayErrores = true;
 			editTextPasswordUsuario.setError("La contraseña no puede estar vacía.");
 		}
-		if(String.valueOf(editTextCantidad.getText()).isEmpty()){
+		String cantidad = String.valueOf(editTextCantidad.getText());
+		if(cantidad.isEmpty()){
 			hayErrores = true;
 			editTextCantidad.setError("La cantidad no puede estar vacía.");
 		}
+		String fechaEntrega = String.valueOf(editTextFechaEntrega.getText());
+		if(fechaEntrega.isEmpty()){
+			hayErrores = true;
+			editTextFechaEntrega.setError("Debe introducir una fecha.");
+		}
+		String horaEntrega = String.valueOf(editTextHoraEntrega.getText());
+		if(horaEntrega.isEmpty()){
+			hayErrores = true;
+			editTextHoraEntrega.setError("Debe introducir una hora");
+		}
 		if(hayErrores == false){
-			compra = new Compra(String.valueOf(editTextNombreUsuario.getText()),
-					String.valueOf(spinnerPlataforma.getSelectedItem()),
-					String.valueOf(spinnerGenero.getSelectedItem()),
-					String.valueOf(spinnerTitulo.getSelectedItem()),
-					Integer.valueOf(String.valueOf(editTextCantidad.getText())),
-					radioButtonSocio.isSelected());
+			compra = new Compra(nombreUsuario, String.valueOf(spinnerPlataforma.getSelectedItem())
+					, String.valueOf(spinnerGenero.getSelectedItem()),
+					String.valueOf(spinnerTitulo.getSelectedItem()), Integer.valueOf(cantidad),
+					fechaEntrega, horaEntrega, radioButtonSocio.isSelected());
 			Intent intent = new Intent(this, SecondActivity.class);
 			intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
-
 			startActivity(intent);
 		}
+	}
+
+	public void mostrarCalendario(View view){
+		DatePickerFragment dpf = new DatePickerFragment();
+		dpf.show(getSupportFragmentManager(), "DatePicker");
+	}
+
+	public void crearFecha(int year, int month, int dayOfMonth){
+		String fecha = dayOfMonth + "/" + (month + 1) + "/" + year;
+		editTextFechaEntrega.setText(fecha);
 	}
 }
 
