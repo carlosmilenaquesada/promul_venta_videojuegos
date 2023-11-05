@@ -180,6 +180,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		String fecha = dayOfMonth + "/" + (month + 1) + "/" + year;
 		editTextFechaEntrega.setText(fecha);
 	}
+
+	public void mostarHora(View view){
+		TimePickerFragment tpf = new TimePickerFragment();
+		tpf.show(getSupportFragmentManager(), "TimePicker");
+	}
+
+	public void crearHora(int hourOfDay, int minute){
+		String hora = hourOfDay + ":" + minute;
+		editTextHoraEntrega.setText(hora);
+	}
 }
 
 
