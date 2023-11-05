@@ -204,12 +204,14 @@
             android:id="@+id/radioButtonSocio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="false"
             android:text="@string/soy_socio_reclamo_mi_descuento" />
 
         <RadioButton
             android:id="@+id/radioButtonNoSocio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="@string/no_soy_socio_no_tengo_descuento" />
     </RadioGroup>
 
@@ -220,6 +222,7 @@
         android:layout_margin="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
+        android:checked="false"
         android:text="@string/acepto_los_t_rminos_y_condiciones"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -233,6 +236,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:minHeight="48dp"
+        android:onClick="irSiguiente"
         android:text="@string/siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/checkBoxCondiciones" />
