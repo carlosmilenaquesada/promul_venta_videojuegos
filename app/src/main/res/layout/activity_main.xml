@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:scrollIndicators="start"
     android:visibility="visible"
     tools:context=".MainActivity">
 
@@ -19,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textViewTitulo"
+            android:id="@+id/textViewTituloCabecera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -30,7 +31,7 @@
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textViewSubtitulo"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSubtituloCabecera"
             app:layout_constraintEnd_toStartOf="@+id/imageViewLogotipo"
             app:layout_constraintHorizontal_bias="0.175"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +39,7 @@
             app:layout_constraintVertical_bias="0.5" />
 
         <TextView
-            android:id="@+id/textViewSubtitulo"
+            android:id="@+id/textViewSubtituloCabecera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="65dp"
@@ -53,7 +54,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageViewLogotipo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewTituloCabecera" />
 
         <ImageView
             android:id="@+id/imageViewLogotipo"
@@ -73,58 +74,114 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/introduce_tu_nombre"
         android:inputType="text"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        android:autofillHints="" />
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/editTextPasswordUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/introduce_tu_contrase_a"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNombreUsuario"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombreUsuario" />
+
+    <TextView
+        android:id="@+id/textViewPlataforma"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:height="48dp"
+        android:text="@string/plataforma"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordUsuario" />
+
+    <TextView
+        android:id="@+id/textViewGenero"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:height="48dp"
+        android:text="@string/g_nero"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPlataforma" />
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:height="48dp"
+        android:text="@string/t_tulo"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGenero" />
+
+    <Spinner
+        android:id="@+id/spinnerPlataforma"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewPlataforma"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordUsuario" />
 
     <Spinner
         android:id="@+id/spinnerGenero"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/spinnerTitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordUsuario" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewGenero"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerPlataforma" />
 
     <Spinner
         android:id="@+id/spinnerTitulo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinnerGenero"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordUsuario" />
+        app:layout_constraintStart_toEndOf="@+id/textViewTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerGenero" />
 
     <EditText
         android:id="@+id/editTextCantidad"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/introduce_la_cantidad"
@@ -138,8 +195,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/checkBoxCondiciones"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
@@ -160,21 +218,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/acepto_los_t_rminos_y_condiciones"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonComprar"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="VisualLintButtonSize" />
 
     <Button
-        android:id="@+id/buttonComprar"
+        android:id="@+id/buttonSiguiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:minHeight="48dp"
-        android:text="@string/button"
+        android:text="@string/siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/checkBoxCondiciones" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

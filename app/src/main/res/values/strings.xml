@@ -10,4 +10,8 @@
     <string name="introduce_tu_contrase_a">Introduce tu contraseña</string>
     <string name="no_soy_socio_no_tengo_descuento">No soy socio, no tengo descuento</string>
     <string name="soy_socio_reclamo_mi_descuento">Soy socio, reclamo mi descuento</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="g_nero">Género</string>
+    <string name="t_tulo">Título</string>
+    <string name="plataforma">plataforma</string>
 </resources>
