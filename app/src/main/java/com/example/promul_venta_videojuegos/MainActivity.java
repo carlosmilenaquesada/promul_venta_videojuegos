@@ -26,7 +26,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 	public static final String PRIMER_ACTIVITY_COMPRA =
-			"promul_venta_videojuegos.MainActivity.PRIMER_ACTIVITY_COMPRA";
+			"promul_venta_videojuegos.MainActivity" + ".PRIMER_ACTIVITY_COMPRA";
 	EditText editTextNombreUsuario;
 	EditText editTextPasswordUsuario;
 	Spinner spinnerPlataforma;
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	}
 
 	public void irSiguiente(View view){
-		boolean hayErrores = false;
+		/*boolean hayErrores = false;
 		if(!checkBoxCondiciones.isChecked()){
 			hayErrores = true;
 			Toast.makeText(this, "Debe aceptar las condiciones.", Toast.LENGTH_SHORT).show();
@@ -149,14 +149,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			editTextHoraEntrega.setError("Debe introducir una hora");
 		}
 		if(hayErrores == false){
-			compra = new Compra(nombreUsuario, String.valueOf(spinnerPlataforma.getSelectedItem()),
+			compra = new Compra(nombreUsuario, String.valueOf(spinnerPlataforma
+			.getSelectedItem())
+					, String.valueOf(spinnerGenero.getSelectedItem()),
+					String.valueOf(spinnerTitulo.getSelectedItem()), 2, Integer.valueOf(cantidad),
+					fechaEntrega, horaEntrega, radioButtonSocio.isSelected());*/
+			compra = new Compra("hola", String.valueOf(spinnerPlataforma.getSelectedItem()),
 					String.valueOf(spinnerGenero.getSelectedItem()),
-					String.valueOf(spinnerTitulo.getSelectedItem()), Integer.valueOf(cantidad),
-					fechaEntrega, horaEntrega, radioButtonSocio.isSelected());
+					String.valueOf(spinnerTitulo.getSelectedItem()), 2, Integer.valueOf(3),
+					"20/10/2023", "00:30", true);
 			Intent intent = new Intent(this, SecondActivity.class);
 			intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
 			startActivity(intent);
-		}
+		//}
 	}
 
 	public void mostrarCalendario(View view){

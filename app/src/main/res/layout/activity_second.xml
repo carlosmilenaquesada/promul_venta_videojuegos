@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/material_dynamic_primary90"
     tools:context=".SecondActivity">
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@color/material_dynamic_neutral99"
+        android:backgroundTint="@color/material_dynamic_primary90"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,136 +20,487 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/material_dynamic_primary90"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textViewTituloDatosCompra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
                 android:text="Datos de la compra"
+                android:textAlignment="center"
                 android:textColor="@color/material_dynamic_neutral10"
-                android:textSize="24sp" />
+                android:textSize="34sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/textViewSecondNombreCliente"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Nombre del cliente"
-                    android:textColor="@color/material_dynamic_neutral10" />
+                    android:singleLine="true"
+                    android:text="Nombre cliente"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/textViewSecondNombreClienteMostrar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/material_dynamic_neutral10" />
+                    android:singleLine="true"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp"
+                    app:autoSizeTextType="uniform" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/textViewSecondPlataforma"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:singleLine="true"
                     android:text="Plataforma"
-                    android:textColor="@color/material_dynamic_neutral10" />
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/textViewSecondPlataformaMostrar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/material_dynamic_neutral10" />
+                    android:singleLine="true"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp"
+                    app:autoSizeTextType="uniform" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/textViewSecondGenero"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:singleLine="true"
                     android:text="Género"
-                    android:textColor="@color/material_dynamic_neutral10" />
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/textViewSecondGeneroMostrar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/material_dynamic_neutral10" />
+                    android:singleLine="true"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp"
+                    app:autoSizeTextType="uniform" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/textViewSecondTitulo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:singleLine="true"
                     android:text="Título"
-                    android:textColor="@color/material_dynamic_neutral10" />
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/textViewSecondTituloMostrar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/material_dynamic_neutral10" />
+                    android:singleLine="true"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/textViewSecondFechaYHora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="Fecha entrega"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewSecondFechaYHoraMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/textViewSecondPrecioUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="Precio unidad"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewSecondPrecioUnidadMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/textViewSecondEsSocio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="Es socio"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewSecondEsSocioMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="20sp"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/textViewSecondDesglose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/material_dynamic_neutral70"
+                    android:gravity="center_vertical"
+                    android:padding="3dp"
+                    android:singleLine="true"
+                    android:text="Desglose"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondCantidad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="Cantidad"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondCantidadMostrar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/material_dynamic_neutral10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondPrecioUnidadSinIva"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="Precio ud. sin IVA"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondPrecioUnidadSinIvaMostrar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/material_dynamic_neutral10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondDescuento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="Descuento"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondDescuentoMostrar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/material_dynamic_neutral10" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/textViewSecondTotalFactura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/material_dynamic_neutral70"
+                    android:gravity="center_vertical"
+                    android:padding="3dp"
+                    android:singleLine="true"
+                    android:text="Total factura"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondSubtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text=" Subtotal sin IVA"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondSubtotalMostrar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/material_dynamic_neutral10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondIva"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="IVA 21%"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondIvaMostrar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/material_dynamic_neutral10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondTotalAPagar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="Total a pagar"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondTotalAPagarMostrar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:textColor="@color/material_dynamic_neutral10" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewFormaPago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:text="Elija la forma de pago"
+                android:textColor="@color/black" />
+
+            <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textViewSecondCantidad"
+                <RadioButton
+                    android:id="@+id/radioButtonPagoEfectivo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Cantidad adquirida"
-                    android:textColor="@color/material_dynamic_neutral10" />
+                    android:text="Efectivo en entrega"
+                    android:textColor="@color/black" />
 
-                <TextView
-                    android:id="@+id/textViewSecondCantidadMostrar"
+                <RadioButton
+                    android:id="@+id/radioButtonTarjeta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/material_dynamic_neutral10" />
-            </LinearLayout>
+                    android:text="Tarjeta"
+                    android:textColor="@color/black" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
+                <RadioButton
+                    android:id="@+id/radioButtonPayPal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PayPal"
+                    android:textColor="@color/black" />
+            </RadioGroup>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Pagar" />
 
         </LinearLayout>
     </ScrollView>

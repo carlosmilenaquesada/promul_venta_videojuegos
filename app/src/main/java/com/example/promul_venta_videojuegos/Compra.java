@@ -7,17 +7,19 @@ public class Compra implements Serializable{
 	private String plataforma;
 	private String genero;
 	private String titulo;
+	private float precioUnidad;
 	private int cantidad;
 	private String fecha;
 	private String hora;
 	private boolean esSocio;
 
 	public Compra(String nombreUsuario, String plataforma, String genero, String titulo,
-				  int cantidad, String fecha, String hora, boolean esSocio){
+				  float precioUnidad, int cantidad, String fecha, String hora, boolean esSocio){
 		this.nombreUsuario = nombreUsuario;
 		this.plataforma = plataforma;
 		this.genero = genero;
 		this.titulo = titulo;
+		this.precioUnidad = precioUnidad;
 		this.cantidad = cantidad;
 		this.fecha = fecha;
 		this.hora = hora;
@@ -56,6 +58,14 @@ public class Compra implements Serializable{
 		this.titulo = titulo;
 	}
 
+	public float getPrecioUnidad(){
+		return precioUnidad;
+	}
+
+	public void setPrecioUnidad(float precioUnidad){
+		this.precioUnidad = precioUnidad;
+	}
+
 	public int getCantidad(){
 		return cantidad;
 	}
@@ -80,7 +90,7 @@ public class Compra implements Serializable{
 		this.hora = hora;
 	}
 
-	public boolean isEsSocio(){
+	public boolean getEsSocio(){
 		return esSocio;
 	}
 
