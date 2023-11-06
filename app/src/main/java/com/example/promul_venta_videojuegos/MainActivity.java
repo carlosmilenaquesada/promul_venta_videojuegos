@@ -5,6 +5,7 @@ import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaJue
 import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaPlataformas;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,13 +19,14 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-	private static final String PRIMER_ACTIVITY_COMPRA =
-			"promul_venta_videojuegos.MainActivity" + ".PRIMER_ACTIVITY_COMPRA";
+	public static final String PRIMER_ACTIVITY_COMPRA =
+			"promul_venta_videojuegos.MainActivity.PRIMER_ACTIVITY_COMPRA";
 	EditText editTextNombreUsuario;
 	EditText editTextPasswordUsuario;
 	Spinner spinnerPlataforma;
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	ArrayAdapter<String> adapterTitulo;
 	Compra compra;
 
+	@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -72,20 +75,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	@Override
 	protected void onSaveInstanceState(@NonNull Bundle outState){
 		super.onSaveInstanceState(outState);
-		//La cantidad es un número, que si al voltear la pantalla está vacío, crashea el programa
-		// al intentar parsear null a Integer, por eso es necesario hacer la comprobación de si
-		// está vacío el campo de editTextCantidad antes de tomar su valor y parsear a Integer.
-		int cantidad = 0;
-		if(!String.valueOf(editTextCantidad.getText()).isEmpty()){
-			cantidad = Integer.valueOf(String.valueOf(editTextCantidad.getText()));
-		}
-		compra = new Compra(String.valueOf(editTextNombreUsuario.getText()),
-				String.valueOf(spinnerPlataforma.getSelectedItem()),
-				String.valueOf(spinnerGenero.getSelectedItem()),
-				String.valueOf(spinnerTitulo.getSelectedItem()), cantidad,
-				String.valueOf(editTextFechaEntrega.getText()),
-				String.valueOf(editTextHoraEntrega.getText()), radioButtonSocio.isSelected());
-		outState.putSerializable(PRIMER_ACTIVITY_COMPRA, compra);
 	}
 
 	@Override
@@ -113,18 +102,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	private ArrayAdapter<String> configurarAdaptadoresSpinnerInmutable(Spinner spinner,
 																	   String[] contenido){
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-				androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, contenido);
-		adapter.setDropDownViewResource(com.google.android.material.R.layout.support_simple_spinner_dropdown_item);
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_cerrado,
+				contenido);
+		adapter.setDropDownViewResource(R.layout.spinner_desplegado);
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
 		return adapter;
 	}
 
 	private ArrayAdapter<String> configurarAdaptadoresSpinnerMutable(Spinner spinner){
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-				androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-		adapter.setDropDownViewResource(com.google.android.material.R.layout.support_simple_spinner_dropdown_item);
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_cerrado);
+		adapter.setDropDownViewResource(R.layout.spinner_desplegado);
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
 		return adapter;
@@ -161,8 +149,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			editTextHoraEntrega.setError("Debe introducir una hora");
 		}
 		if(hayErrores == false){
-			compra = new Compra(nombreUsuario, String.valueOf(spinnerPlataforma.getSelectedItem())
-					, String.valueOf(spinnerGenero.getSelectedItem()),
+			compra = new Compra(nombreUsuario, String.valueOf(spinnerPlataforma.getSelectedItem()),
+					String.valueOf(spinnerGenero.getSelectedItem()),
 					String.valueOf(spinnerTitulo.getSelectedItem()), Integer.valueOf(cantidad),
 					fechaEntrega, horaEntrega, radioButtonSocio.isSelected());
 			Intent intent = new Intent(this, SecondActivity.class);

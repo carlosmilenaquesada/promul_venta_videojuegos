@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayoutGeneral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_neutral99"
+    android:background="@drawable/second_background"
     android:orientation="vertical"
     android:scrollIndicators="start"
     android:visibility="visible"
@@ -75,53 +75,67 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/material_dynamic_neutral99">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editTextNombreUsuario"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:height="@dimen/altura_cuadro_texto_input"
-                android:background="?attr/editTextBackground"
-                android:backgroundTint="@color/black"
-                android:ems="10"
-                android:hint="@string/introduce_tu_nombre"
-                android:inputType="text"
-                android:minHeight="@dimen/altura_cuadro_texto_input"
-                android:shadowColor="@color/black"
-                android:textColor="@color/material_dynamic_neutral10"
-                android:textColorHighlight="@color/material_dynamic_neutral40"
-                android:textColorHint="@color/material_dynamic_neutral40"
-                tools:ignore="VisualLintTextFieldSize" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/editTextPasswordUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:height="@dimen/altura_cuadro_texto_input"
-                android:background="?attr/editTextBackground"
-                android:backgroundTint="@color/black"
-                android:ems="10"
-                android:hint="@string/introduce_tu_contrase_a"
-                android:inputType="text"
-                android:minHeight="@dimen/altura_cuadro_texto_input"
-                android:shadowColor="@color/black"
-                android:textColor="@color/material_dynamic_neutral10"
-                android:textColorHighlight="@color/material_dynamic_neutral40"
-                android:textColorHint="@color/material_dynamic_neutral40" />
+                <EditText
+                    android:id="@+id/editTextPasswordUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5dp"
+                    android:height="@dimen/altura_cuadro_texto_input"
+                    android:background="?attr/editTextBackground"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/introduce_tu_contrase_a"
+                    android:inputType="text"
+                    android:minHeight="@dimen/altura_cuadro_texto_input"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textColorHighlight="@color/material_dynamic_neutral40"
+                    android:textColorHint="@color/material_dynamic_neutral40" />
+
+                <EditText
+                    android:id="@+id/editTextNombreUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right|center_vertical|end"
+                    android:layout_margin="5dp"
+                    android:height="@dimen/altura_cuadro_texto_input"
+                    android:background="?attr/editTextBackground"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/introduce_tu_nombre"
+                    android:inputType="text"
+                    android:minHeight="@dimen/altura_cuadro_texto_input"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textColorHighlight="@color/material_dynamic_neutral40"
+                    android:textColorHint="@color/material_dynamic_neutral40"
+                    tools:ignore="VisualLintTextFieldSize" />
+
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="8dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -146,7 +160,7 @@
 
                     <Spinner
                         android:id="@+id/spinnerGenero"
-                        android:layout_width="match_parent"
+                        android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center_vertical"
                         android:layout_margin="0dp"
@@ -176,7 +190,7 @@
 
                     <Spinner
                         android:id="@+id/spinnerPlataforma"
-                        android:layout_width="match_parent"
+                        android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center_vertical"
                         android:layout_margin="0dp"
@@ -207,7 +221,7 @@
 
                     <Spinner
                         android:id="@+id/spinnerTitulo"
-                        android:layout_width="match_parent"
+                        android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center_vertical"
                         android:layout_margin="0dp"
@@ -217,70 +231,80 @@
 
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/editTextFechaEntrega"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="?attr/editTextBackground"
-                android:backgroundTint="@color/black"
-                android:ems="10"
-                android:focusableInTouchMode="false"
-                android:hint="@string/fecha_entrega_hint"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:onClick="mostrarCalendario"
-                android:shadowColor="@color/black"
-                android:textColor="@color/material_dynamic_neutral10"
-                android:textColorHighlight="@color/material_dynamic_neutral40"
-                android:textColorHint="@color/material_dynamic_neutral40" />
-
-            <EditText
-                android:id="@+id/editTextHoraEntrega"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginEnd="8dp"
-                android:background="?attr/editTextBackground"
-                android:backgroundTint="@color/black"
-                android:ems="10"
-                android:focusableInTouchMode="false"
-                android:hint="@string/hora_entrega_hint"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:onClick="mostarHora"
-                android:shadowColor="@color/black"
-                android:textColor="@color/material_dynamic_neutral10"
-                android:textColorHighlight="@color/material_dynamic_neutral40"
-                android:textColorHint="@color/material_dynamic_neutral40" />
-
-            <EditText
-                android:id="@+id/editTextCantidad"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:height="@dimen/altura_cuadro_texto_input"
-                android:background="?attr/editTextBackground"
-                android:backgroundTint="@color/black"
-                android:ems="10"
-                android:hint="@string/introduce_la_cantidad"
-                android:inputType="number"
-                android:minHeight="@dimen/altura_cuadro_texto_input"
-                android:shadowColor="@color/black"
-                android:textColor="@color/material_dynamic_neutral10"
-                android:textColorHighlight="@color/material_dynamic_neutral40"
-                android:textColorHint="@color/material_dynamic_neutral40" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextFechaEntrega"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="?attr/editTextBackground"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/fecha_entrega_hint"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:onClick="mostrarCalendario"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textColorHighlight="@color/material_dynamic_neutral40"
+                    android:textColorHint="@color/material_dynamic_neutral40" />
+
+                <EditText
+                    android:id="@+id/editTextHoraEntrega"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?attr/editTextBackground"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/hora_entrega_hint"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:onClick="mostarHora"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textColorHighlight="@color/material_dynamic_neutral40"
+                    android:textColorHint="@color/material_dynamic_neutral40" />
+
+                <EditText
+                    android:id="@+id/editTextCantidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:height="@dimen/altura_cuadro_texto_input"
+                    android:background="?attr/editTextBackground"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/introduce_la_cantidad"
+                    android:inputType="number"
+                    android:minHeight="@dimen/altura_cuadro_texto_input"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textColorHighlight="@color/material_dynamic_neutral40"
+                    android:textColorHint="@color/material_dynamic_neutral40" />
+            </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/radioButtonGrupo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="5dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/radioButtonSocio"
@@ -310,8 +334,10 @@
             </RadioGroup>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <CheckBox
