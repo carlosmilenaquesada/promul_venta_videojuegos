@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private ArrayAdapter<String> configurarAdaptadoresSpinnerMutable(Spinner spinner){
 		ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_cerrado);
 		adapter.setDropDownViewResource(R.layout.spinner_desplegado);
+
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
 		return adapter;
@@ -173,10 +174,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					juegoPrecioPortada.getNombreJuego(), juegoPrecioPortada.getPrecioJuego(),
 					Integer.valueOf(cantidad), fechaEntrega, horaEntrega,
 					radioButtonSocio.isSelected());
-		/*compra = new Compra("hola", String.valueOf(spinnerPlataforma.getSelectedItem()),
-				String.valueOf(spinnerGenero.getSelectedItem()), juegoPrecio.getNombreJuego(),
-				juegoPrecio.getPrecioJuego(), Integer.valueOf(3),
-				"20/10" + "/2023", "00:30", true);*/
 			Intent intent = new Intent(this, SecondActivity.class);
 			intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
 			startActivity(intent);
