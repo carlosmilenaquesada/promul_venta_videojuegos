@@ -93,24 +93,6 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editTextPasswordUsuario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="5dp"
-                    android:height="@dimen/altura_cuadro_texto_input"
-                    android:background="?attr/editTextBackground"
-                    android:backgroundTint="@color/black"
-                    android:ems="10"
-                    android:hint="@string/introduce_tu_contrase_a"
-                    android:inputType="text"
-                    android:minHeight="@dimen/altura_cuadro_texto_input"
-                    android:shadowColor="@color/black"
-                    android:textColor="@color/material_dynamic_neutral10"
-                    android:textColorHighlight="@color/material_dynamic_neutral40"
-                    android:textColorHint="@color/material_dynamic_neutral40" />
-
-                <EditText
                     android:id="@+id/editTextNombreUsuario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -128,6 +110,24 @@
                     android:textColorHighlight="@color/material_dynamic_neutral40"
                     android:textColorHint="@color/material_dynamic_neutral40"
                     tools:ignore="VisualLintTextFieldSize" />
+
+                <EditText
+                    android:id="@+id/editTextPasswordUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5dp"
+                    android:height="@dimen/altura_cuadro_texto_input"
+                    android:background="?attr/editTextBackground"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/introduce_tu_contrase_a"
+                    android:inputType="text"
+                    android:minHeight="@dimen/altura_cuadro_texto_input"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textColorHighlight="@color/material_dynamic_neutral40"
+                    android:textColorHint="@color/material_dynamic_neutral40" />
 
             </LinearLayout>
 

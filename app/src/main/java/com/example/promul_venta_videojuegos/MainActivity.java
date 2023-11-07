@@ -1,5 +1,6 @@
 package com.example.promul_venta_videojuegos;
 
+import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.JuegoPrecioPortada;
 import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaGeneros;
 import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaJuegos;
 import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaPlataformas;
@@ -13,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -22,7 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 	public static final String PRIMER_ACTIVITY_COMPRA =
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	EditText editTextCantidad;
 	EditText editTextFechaEntrega;
 	EditText editTextHoraEntrega;
+	ImageView imageViewPortadaJuego;
 	RadioGroup radioButtonGrupo;
 	RadioButton radioButtonSocio;
 	RadioButton radioButtonNoSocio;
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	ArrayAdapter<String> adapterGenero;
 	ArrayAdapter<String> adapterTitulo;
 	Compra compra;
+	JuegoPrecioPortada juegoPrecioPortada;
 
 	@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
 	@Override
@@ -65,11 +69,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		editTextCantidad = findViewById(R.id.editTextCantidad);
 		editTextFechaEntrega = findViewById(R.id.editTextFechaEntrega);
 		editTextHoraEntrega = findViewById(R.id.editTextHoraEntrega);
+		imageViewPortadaJuego = findViewById(R.id.imageViewPortadaJuego);
 		radioButtonGrupo = findViewById(R.id.radioButtonGrupo);
 		radioButtonSocio = findViewById(R.id.radioButtonSocio);
 		radioButtonNoSocio = findViewById(R.id.radioButtonNoSocio);
 		checkBoxCondiciones = findViewById(R.id.checkBoxCondiciones);
 		buttonComprar = findViewById(R.id.buttonSiguiente);
+		juegoPrecioPortada = new JuegoPrecioPortada();
 	}
 
 	@Override
@@ -82,18 +88,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		switch(parent.getId()){
 			case R.id.spinnerPlataforma:
 				plataforma = position;
+				titulo = 0;
 				break;
 			case R.id.spinnerGenero:
 				genero = position;
+				titulo = 0;
 				break;
 			case R.id.spinnerTitulo:
 				titulo = position;
 				break;
 		}
-		String[][] plat = (String[][]) listaJuegos[plataforma];
-		String[] platGen = plat[genero];
+		JuegoPrecioPortada[][] plat = (JuegoPrecioPortada[][]) listaJuegos[plataforma];
+		JuegoPrecioPortada[] platGen = plat[genero];
 		adapterTitulo.clear();
-		adapterTitulo.addAll(Arrays.asList(platGen));
+		ArrayList<String> titulos = new ArrayList<>();
+		for(JuegoPrecioPortada jp : platGen){
+			titulos.add(jp.getNombreJuego());
+		}
+		adapterTitulo.addAll(titulos);
+		juegoPrecioPortada = new JuegoPrecioPortada(platGen[titulo].getNombreJuego(),
+				platGen[titulo].getPrecioJuego(), platGen[titulo].getPortadaId());
+		imageViewPortadaJuego.setImageResource(juegoPrecioPortada.getPortadaId());
+	}
+
+	private void actualizarImagen(){
+
 	}
 
 	@Override
@@ -119,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	}
 
 	public void irSiguiente(View view){
-		/*boolean hayErrores = false;
+		boolean hayErrores = false;
 		if(!checkBoxCondiciones.isChecked()){
 			hayErrores = true;
 			Toast.makeText(this, "Debe aceptar las condiciones.", Toast.LENGTH_SHORT).show();
@@ -149,19 +168,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			editTextHoraEntrega.setError("Debe introducir una hora");
 		}
 		if(hayErrores == false){
-			compra = new Compra(nombreUsuario, String.valueOf(spinnerPlataforma
-			.getSelectedItem())
+			compra = new Compra(nombreUsuario, String.valueOf(spinnerPlataforma.getSelectedItem())
 					, String.valueOf(spinnerGenero.getSelectedItem()),
-					String.valueOf(spinnerTitulo.getSelectedItem()), 2, Integer.valueOf(cantidad),
-					fechaEntrega, horaEntrega, radioButtonSocio.isSelected());*/
-			compra = new Compra("hola", String.valueOf(spinnerPlataforma.getSelectedItem()),
-					String.valueOf(spinnerGenero.getSelectedItem()),
-					String.valueOf(spinnerTitulo.getSelectedItem()), 2, Integer.valueOf(3),
-					"20/10/2023", "00:30", true);
+					juegoPrecioPortada.getNombreJuego(), juegoPrecioPortada.getPrecioJuego(),
+					Integer.valueOf(cantidad), fechaEntrega, horaEntrega,
+					radioButtonSocio.isSelected());
+		/*compra = new Compra("hola", String.valueOf(spinnerPlataforma.getSelectedItem()),
+				String.valueOf(spinnerGenero.getSelectedItem()), juegoPrecio.getNombreJuego(),
+				juegoPrecio.getPrecioJuego(), Integer.valueOf(3),
+				"20/10" + "/2023", "00:30", true);*/
 			Intent intent = new Intent(this, SecondActivity.class);
 			intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
 			startActivity(intent);
-		//}
+		}
 	}
 
 	public void mostrarCalendario(View view){
