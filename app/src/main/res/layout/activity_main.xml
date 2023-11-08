@@ -220,121 +220,163 @@
                         android:backgroundTint="@color/material_dynamic_primary90"
                         android:minHeight="@dimen/altura_cuadro_texto" />
                 </LinearLayout>
+
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewPortadaJuego"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margen_basico"
+                android:contentDescription="@string/portadas" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <LinearLayout
+                <RadioGroup
+                    android:id="@+id/radioButtonGrupo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margen_basico"
+                    android:layout_marginBottom="@dimen/margen_basico">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonSocio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:height="@dimen/altura_cuadro_texto"
+                        android:backgroundTint="@color/black"
+                        android:checked="false"
+                        android:minHeight="@dimen/altura_cuadro_texto"
+                        android:onClick="checkeoEsSocio"
+                        android:shadowColor="@color/black"
+                        android:text="@string/soy_socio_reclamo_mi_descuento"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textColorHighlight="@color/material_dynamic_neutral40" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonNoSocio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:height="@dimen/altura_cuadro_texto"
+                        android:backgroundTint="@color/black"
+                        android:checked="true"
+                        android:minHeight="@dimen/altura_cuadro_texto"
+                        android:onClick="checkeoEsSocio"
+                        android:shadowColor="@color/black"
+                        android:text="@string/no_soy_socio_no_tengo_descuento"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textColorHighlight="@color/material_dynamic_neutral40" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/editTextFechaEntrega"
+                    <TextView
+                        android:id="@+id/textViewPrecio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margen_reducido"
-                        android:layout_marginStart="@dimen/margen_basico"
-                        android:layout_marginEnd="@dimen/margen_basico"
-                        android:layout_marginBottom="@dimen/margen_basico"
-                        android:background="?attr/editTextBackground"
-                        android:backgroundTint="@color/black"
-                        android:ems="10"
-                        android:focusableInTouchMode="false"
-                        android:hint="@string/fecha_entrega_hint"
-                        android:inputType="text"
-                        android:minHeight="@dimen/altura_cuadro_texto"
-                        android:onClick="mostrarCalendario"
-                        android:shadowColor="@color/black"
-                        android:textColor="@color/material_dynamic_neutral10"
-                        android:textColorHighlight="@color/material_dynamic_neutral40"
-                        android:textColorHint="@color/material_dynamic_neutral40"
-                        android:autofillHints="" />
-
-                    <EditText
-                        android:id="@+id/editTextHoraEntrega"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_margin="@dimen/margen_reducido"
                         android:layout_marginEnd="@dimen/margen_basico"
-                        android:background="?attr/editTextBackground"
                         android:backgroundTint="@color/black"
-                        android:ems="10"
-                        android:focusableInTouchMode="false"
-                        android:hint="@string/hora_entrega_hint"
-                        android:inputType="text"
-                        android:minHeight="@dimen/altura_cuadro_texto"
-                        android:onClick="mostarHora"
                         android:shadowColor="@color/black"
+                        android:text="@string/precio_unidad"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
-                        android:textColorHint="@color/material_dynamic_neutral40"
-                        android:autofillHints="" />
+                        android:textSize="@dimen/tamaño_fuente_pequeña"
+                        android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextCantidad"
+                    <TextView
+                        android:id="@+id/textViewPrecioMostrar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_margin="@dimen/margen_reducido"
-                        android:background="?attr/editTextBackground"
+                        android:layout_marginEnd="@dimen/margen_basico"
                         android:backgroundTint="@color/black"
-                        android:ems="10"
-                        android:hint="@string/introduce_la_cantidad"
-                        android:inputType="number"
-                        android:minHeight="@dimen/altura_cuadro_texto"
+                        android:gravity="center"
                         android:shadowColor="@color/black"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
-                        android:textColorHint="@color/material_dynamic_neutral40"
-                        android:autofillHints="" />
+                        android:textSize="@dimen/tamaño_fuente_pequeña" />
+
                 </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imageViewPortadaJuego"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/margen_basico"
-                    android:contentDescription="@string/portadas" />
 
             </LinearLayout>
 
-            <RadioGroup
-                android:id="@+id/radioButtonGrupo"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margen_basico"
-                android:layout_marginBottom="@dimen/margen_basico">
+                android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/radioButtonSocio"
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/editTextFechaEntrega"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:height="@dimen/altura_cuadro_texto"
+                    android:layout_margin="@dimen/margen_reducido"
+                    android:layout_marginStart="@dimen/margen_basico"
+                    android:layout_marginEnd="@dimen/margen_basico"
+                    android:layout_marginBottom="@dimen/margen_basico"
+                    android:autofillHints=""
+                    android:background="?attr/editTextBackground"
                     android:backgroundTint="@color/black"
-                    android:checked="false"
+                    android:ems="10"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/fecha_entrega_hint"
+                    android:inputType="text"
+                    android:minHeight="@dimen/altura_cuadro_texto"
+                    android:onClick="mostrarCalendario"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textColorHighlight="@color/material_dynamic_neutral40"
+                    android:textColorHint="@color/material_dynamic_neutral40" />
+
+                <EditText
+                    android:id="@+id/editTextHoraEntrega"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margen_reducido"
+                    android:layout_marginEnd="@dimen/margen_basico"
+                    android:autofillHints=""
+                    android:background="?attr/editTextBackground"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/hora_entrega_hint"
+                    android:inputType="text"
+                    android:minHeight="@dimen/altura_cuadro_texto"
+                    android:onClick="mostarHora"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textColorHighlight="@color/material_dynamic_neutral40"
+                    android:textColorHint="@color/material_dynamic_neutral40" />
+
+                <EditText
+                    android:id="@+id/editTextCantidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margen_reducido"
+                    android:autofillHints=""
+                    android:background="?attr/editTextBackground"
+                    android:backgroundTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/introduce_la_cantidad"
+                    android:inputType="number"
                     android:minHeight="@dimen/altura_cuadro_texto"
                     android:shadowColor="@color/black"
-                    android:text="@string/soy_socio_reclamo_mi_descuento"
                     android:textColor="@color/material_dynamic_neutral10"
-                    android:textColorHighlight="@color/material_dynamic_neutral40" />
+                    android:textColorHighlight="@color/material_dynamic_neutral40"
+                    android:textColorHint="@color/material_dynamic_neutral40" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonNoSocio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:height="@dimen/altura_cuadro_texto"
-                    android:backgroundTint="@color/black"
-                    android:checked="true"
-                    android:minHeight="@dimen/altura_cuadro_texto"
-                    android:shadowColor="@color/black"
-                    android:text="@string/no_soy_socio_no_tengo_descuento"
-                    android:textColor="@color/material_dynamic_neutral10"
-                    android:textColorHighlight="@color/material_dynamic_neutral40" />
-            </RadioGroup>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

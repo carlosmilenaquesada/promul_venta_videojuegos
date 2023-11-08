@@ -18,13 +18,14 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
-
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	RadioGroup radioButtonGrupo;
 	RadioButton radioButtonSocio;
 	RadioButton radioButtonNoSocio;
+	TextView textViewPrecioMostrar;
 	CheckBox checkBoxCondiciones;
 	Button buttonComprar;
 	ArrayAdapter<String> adapterPlataforma;
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	ArrayAdapter<String> adapterTitulo;
 	Compra compra;
 	JuegoPrecioPortada juegoPrecioPortada;
-
+DecimalFormat dm;
 	@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -75,8 +77,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		radioButtonSocio = findViewById(R.id.radioButtonSocio);
 		radioButtonNoSocio = findViewById(R.id.radioButtonNoSocio);
 		checkBoxCondiciones = findViewById(R.id.checkBoxCondiciones);
+		textViewPrecioMostrar = findViewById(R.id.textViewPrecioMostrar);
 		buttonComprar = findViewById(R.id.buttonSiguiente);
 		juegoPrecioPortada = new JuegoPrecioPortada();
+		dm = new DecimalFormat("0.00");
 	}
 
 	@Override
@@ -108,8 +112,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		juegoPrecioPortada = new JuegoPrecioPortada(platGen[titulo].getNombreJuego(),
 				platGen[titulo].getPrecioJuego(), platGen[titulo].getPortadaId());
 		imageViewPortadaJuego.setImageResource(juegoPrecioPortada.getPortadaId());
+		actualizarPrecioJuego();
 	}
 
+	public void actualizarPrecioJuego(){
+		float precioJuego = juegoPrecioPortada.getPrecioJuego();
+		String mensajePrecio = "Sin descuento:\n" + dm.format(precioJuego) + "€";
+		if(radioButtonSocio.isChecked()){
+			precioJuego = precioJuego / 1.15f;
+			mensajePrecio = "15% descuento:\n" + dm.format(precioJuego) + "€";
+		}
+		textViewPrecioMostrar.setText(mensajePrecio);
+	}
+
+	public void checkeoEsSocio(View view){
+		actualizarPrecioJuego();
+	}
 
 	@Override
 	public void onNothingSelected(AdapterView<?> parent){
