@@ -22,13 +22,13 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
 		Calendar calendar = Calendar.getInstance();
 		int hora = calendar.get(Calendar.HOUR);
 		int minuto = calendar.get(Calendar.MINUTE);
-		TimePickerDialog tpd = new TimePickerDialog(getActivity(), this, hora, minuto, true);
-		return tpd;
+		return new TimePickerDialog(getActivity(), this, hora, minuto, true);
 	}
 
 	@Override
 	public void onTimeSet(TimePicker view, int hourOfDay, int minute){
 		MainActivity mainActivity = (MainActivity) getActivity();
+		assert mainActivity != null;
 		mainActivity.crearHora(hourOfDay, minute);
 	}
 }

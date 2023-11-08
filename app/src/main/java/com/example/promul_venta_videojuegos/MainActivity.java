@@ -20,6 +20,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -85,18 +86,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
-		switch(parent.getId()){
-			case R.id.spinnerPlataforma:
-				plataforma = position;
-				titulo = 0;
-				break;
-			case R.id.spinnerGenero:
+		int parentId = parent.getId();
+		titulo = 0;
+		if(parentId == R.id.spinnerPlataforma){
+			plataforma = position;
+		}else{
+			if(parentId == R.id.spinnerGenero){
 				genero = position;
-				titulo = 0;
-				break;
-			case R.id.spinnerTitulo:
+			}else{
 				titulo = position;
-				break;
+			}
 		}
 		JuegoPrecioPortada[][] plat = (JuegoPrecioPortada[][]) listaJuegos[plataforma];
 		JuegoPrecioPortada[] platGen = plat[genero];
@@ -111,9 +110,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		imageViewPortadaJuego.setImageResource(juegoPrecioPortada.getPortadaId());
 	}
 
-	private void actualizarImagen(){
-
-	}
 
 	@Override
 	public void onNothingSelected(AdapterView<?> parent){
@@ -132,13 +128,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private ArrayAdapter<String> configurarAdaptadoresSpinnerMutable(Spinner spinner){
 		ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_cerrado);
 		adapter.setDropDownViewResource(R.layout.spinner_desplegado);
-
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
 		return adapter;
 	}
 
 	public void irSiguiente(View view){
+		hack();
+		//legal();
+	}
+
+	private void hack(){
+		compra = new Compra("felipe", "playstation", "acción", "tombraider", 10.0f, 5, "20/03/2023"
+				, "07:30", true);
+		Intent intent = new Intent(this, SecondActivity.class);
+		intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
+		startActivity(intent);
+	}
+
+	private void legal(){
 		boolean hayErrores = false;
 		if(!checkBoxCondiciones.isChecked()){
 			hayErrores = true;
@@ -168,12 +176,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			hayErrores = true;
 			editTextHoraEntrega.setError("Debe introducir una hora");
 		}
-		if(hayErrores == false){
+		if(!hayErrores){
 			compra = new Compra(nombreUsuario, String.valueOf(spinnerPlataforma.getSelectedItem())
 					, String.valueOf(spinnerGenero.getSelectedItem()),
 					juegoPrecioPortada.getNombreJuego(), juegoPrecioPortada.getPrecioJuego(),
-					Integer.valueOf(cantidad), fechaEntrega, horaEntrega,
-					radioButtonSocio.isSelected());
+					Integer.parseInt(cantidad), fechaEntrega, horaEntrega,
+					radioButtonSocio.isChecked());
 			Intent intent = new Intent(this, SecondActivity.class);
 			intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
 			startActivity(intent);

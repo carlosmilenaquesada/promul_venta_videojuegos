@@ -19,24 +19,12 @@ public class SimuladorBaseDeDatos{
 			return nombreJuego;
 		}
 
-		public void setNombreJuego(String nombreJuego){
-			this.nombreJuego = nombreJuego;
-		}
-
 		public float getPrecioJuego(){
 			return precioJuego;
 		}
 
-		public void setPrecioJuego(float precioJuego){
-			this.precioJuego = precioJuego;
-		}
-
 		public int getPortadaId(){
 			return portadaId;
-		}
-
-		public void setPortadaId(int portadaId){
-			this.portadaId = portadaId;
 		}
 	}
 

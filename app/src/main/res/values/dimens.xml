@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="altura_cuadro_texto_info">30dp</dimen>
-    <dimen name="altura_cuadro_texto_input">48dp</dimen>
+
+    <dimen name="altura_cuadro_texto">48dp</dimen>
+
+    <dimen name="margen_muy_reducido">3dp</dimen>
+    <dimen name="margen_reducido">5dp</dimen>
+    <dimen name="margen_basico">8dp</dimen>
+    <dimen name="margen_grande">20dp</dimen>
+    <dimen name="ancho_logotipo">100dp</dimen>
+    <dimen name="alto_logotipo">50dp</dimen>
+    <dimen name="tamaño_fuente_pequeña">16sp</dimen>
+    <dimen name="tamaño_fuente_media">20sp</dimen>
+    <dimen name="tamaño_fuente_basica">24sp</dimen>
+    <dimen name="tamaño_fuente_grande">34sp</dimen>
+    <dimen name="margen_mediano">15dp</dimen>
+
 </resources>

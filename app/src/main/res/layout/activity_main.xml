@@ -5,7 +5,8 @@
     android:id="@+id/constraintLayoutGeneral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_neutral99"
+    android:background="@color/material_dynamic_primary90"
+    android:backgroundTint="@color/material_dynamic_primary90"
     android:orientation="vertical"
     android:scrollIndicators="start"
     android:visibility="visible"
@@ -15,13 +16,12 @@
         android:id="@+id/constraintLayoutCabecera"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/header_background"
+        android:background="@drawable/background"
         android:visibility="visible">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageViewLogotipo"
@@ -34,13 +34,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@android:drawable/dialog_holo_light_frame"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:shadowColor="#473535"
+                android:paddingStart="@dimen/margen_mediano"
+                android:paddingEnd="@dimen/margen_mediano"
+                android:shadowColor="@color/cabecera_letra"
                 android:text="@string/wellplayed"
                 android:textAlignment="center"
-                android:textColor="#473535"
-                android:textSize="24sp"
+                android:textColor="@color/cabecera_letra"
+                android:textSize="@dimen/tamaño_fuente_basica"
                 android:textStyle="bold" />
 
             <TextView
@@ -49,21 +49,21 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@android:drawable/dialog_holo_light_frame"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:shadowColor="#473535"
+                android:paddingStart="@dimen/margen_mediano"
+                android:paddingEnd="@dimen/margen_mediano"
+                android:shadowColor="@color/cabecera_letra"
                 android:text="@string/subtitulo_cabecera"
                 android:textAlignment="center"
-                android:textColor="#473535"
-                android:textSize="16sp"
+                android:textColor="@color/cabecera_letra"
+                android:textSize="@dimen/tamaño_fuente_pequeña"
                 android:textStyle="italic" />
         </LinearLayout>
 
         <ImageView
             android:id="@+id/imageViewLogotipo"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="10dp"
+            android:layout_width="@dimen/ancho_logotipo"
+            android:layout_height="@dimen/alto_logotipo"
+            android:layout_marginEnd="@dimen/margen_basico"
             android:background="@drawable/wellplayedlogo"
             android:backgroundTint="@color/material_dynamic_neutral10"
             android:contentDescription="@string/logotipo"
@@ -87,36 +87,39 @@
                 android:id="@+id/editTextNombreUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:height="@dimen/altura_cuadro_texto_input"
+                android:layout_margin="@dimen/margen_reducido"
+                android:height="@dimen/altura_cuadro_texto"
                 android:background="?attr/editTextBackground"
                 android:backgroundTint="@color/black"
+                android:backgroundTintMode="multiply"
                 android:ems="10"
                 android:hint="@string/introduce_tu_nombre"
                 android:inputType="text"
-                android:minHeight="@dimen/altura_cuadro_texto_input"
+                android:minHeight="@dimen/altura_cuadro_texto"
                 android:shadowColor="@color/black"
                 android:textColor="@color/material_dynamic_neutral10"
                 android:textColorHighlight="@color/material_dynamic_neutral40"
                 android:textColorHint="@color/material_dynamic_neutral40"
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="VisualLintTextFieldSize"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/editTextPasswordUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:height="@dimen/altura_cuadro_texto_input"
+                android:layout_margin="@dimen/margen_reducido"
+                android:height="@dimen/altura_cuadro_texto"
                 android:background="?attr/editTextBackground"
                 android:backgroundTint="@color/black"
                 android:ems="10"
                 android:hint="@string/introduce_tu_contrase_a"
-                android:inputType="text"
-                android:minHeight="@dimen/altura_cuadro_texto_input"
+                android:inputType="textPassword"
+                android:minHeight="@dimen/altura_cuadro_texto"
                 android:shadowColor="@color/black"
                 android:textColor="@color/material_dynamic_neutral10"
                 android:textColorHighlight="@color/material_dynamic_neutral40"
-                android:textColorHint="@color/material_dynamic_neutral40" />
+                android:textColorHint="@color/material_dynamic_neutral40"
+                android:autofillHints="" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -126,84 +129,86 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_margin="@dimen/margen_reducido"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textViewGenero"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|left|center_vertical"
-                        android:layout_margin="5dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_weight="1"
-                        android:height="@dimen/altura_cuadro_texto_info"
-                        android:backgroundTint="@color/black"
-                        android:shadowColor="@color/black"
-                        android:text="@string/g_nero"
-                        android:textColor="@color/material_dynamic_neutral10"
-                        android:textColorHighlight="@color/material_dynamic_neutral40"
-                        android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/textViewPlataforma"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="start|left|center_vertical"
-                        android:layout_margin="5dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_margin="@dimen/margen_reducido"
+                        android:layout_marginEnd="@dimen/margen_basico"
                         android:layout_weight="1"
-                        android:height="@dimen/altura_cuadro_texto_info"
+                        android:height="@dimen/altura_cuadro_texto"
                         android:backgroundTint="@color/black"
                         android:shadowColor="@color/black"
                         android:text="@string/plataforma"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
-                        android:textSize="24sp" />
+                        android:textSize="@dimen/tamaño_fuente_basica" />
+
+                    <TextView
+                        android:id="@+id/textViewGenero"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_margin="@dimen/margen_reducido"
+                        android:layout_marginBottom="@dimen/margen_basico"
+                        android:layout_weight="1"
+                        android:height="@dimen/altura_cuadro_texto"
+                        android:backgroundTint="@color/black"
+                        android:shadowColor="@color/black"
+                        android:text="@string/g_nero"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textColorHighlight="@color/material_dynamic_neutral40"
+                        android:textSize="@dimen/tamaño_fuente_basica" />
 
                     <TextView
                         android:id="@+id/textViewTitulo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="start|left|center_vertical"
-                        android:layout_margin="5dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_margin="@dimen/margen_reducido"
+                        android:layout_marginTop="@dimen/margen_basico"
                         android:layout_weight="1"
-                        android:height="@dimen/altura_cuadro_texto_info"
+                        android:height="@dimen/altura_cuadro_texto"
                         android:backgroundTint="@color/black"
                         android:shadowColor="@color/black"
                         android:text="@string/t_tulo"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
-                        android:textSize="24sp" />
+                        android:textSize="@dimen/tamaño_fuente_basica" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/material_dynamic_primary90"
+                    android:backgroundTint="@color/material_dynamic_primary90"
                     android:orientation="vertical">
-
-                    <Spinner
-                        android:id="@+id/spinnerGenero"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:layout_margin="0dp"
-                        android:layout_weight="1"
-                        android:background="@color/material_dynamic_neutral10"
-                        android:minHeight="@dimen/altura_cuadro_texto_input" />
 
                     <Spinner
                         android:id="@+id/spinnerPlataforma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center_vertical"
-                        android:layout_margin="0dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/margen_basico"
                         android:layout_weight="1"
-                        android:background="@color/material_dynamic_neutral10"
-                        android:minHeight="@dimen/altura_cuadro_texto_input" />
+                        android:background="@color/material_dynamic_primary90"
+                        android:backgroundTint="@color/material_dynamic_primary90"
+                        android:minHeight="@dimen/altura_cuadro_texto" />
+
+                    <Spinner
+                        android:id="@+id/spinnerGenero"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_weight="1"
+                        android:background="@color/material_dynamic_primary90"
+                        android:backgroundTint="@color/material_dynamic_primary90"
+                        android:minHeight="@dimen/altura_cuadro_texto" />
 
                     <Spinner
                         android:id="@+id/spinnerTitulo"
@@ -211,8 +216,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center_vertical"
                         android:layout_weight="1"
-                        android:background="@color/material_dynamic_neutral10"
-                        android:minHeight="@dimen/altura_cuadro_texto_input" />
+                        android:background="@color/material_dynamic_primary90"
+                        android:backgroundTint="@color/material_dynamic_primary90"
+                        android:minHeight="@dimen/altura_cuadro_texto" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -230,57 +236,60 @@
                         android:id="@+id/editTextFechaEntrega"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_margin="@dimen/margen_reducido"
+                        android:layout_marginStart="@dimen/margen_basico"
+                        android:layout_marginEnd="@dimen/margen_basico"
+                        android:layout_marginBottom="@dimen/margen_basico"
                         android:background="?attr/editTextBackground"
                         android:backgroundTint="@color/black"
                         android:ems="10"
                         android:focusableInTouchMode="false"
                         android:hint="@string/fecha_entrega_hint"
                         android:inputType="text"
-                        android:minHeight="48dp"
+                        android:minHeight="@dimen/altura_cuadro_texto"
                         android:onClick="mostrarCalendario"
                         android:shadowColor="@color/black"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
-                        android:textColorHint="@color/material_dynamic_neutral40" />
+                        android:textColorHint="@color/material_dynamic_neutral40"
+                        android:autofillHints="" />
 
                     <EditText
                         android:id="@+id/editTextHoraEntrega"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_margin="@dimen/margen_reducido"
+                        android:layout_marginEnd="@dimen/margen_basico"
                         android:background="?attr/editTextBackground"
                         android:backgroundTint="@color/black"
                         android:ems="10"
                         android:focusableInTouchMode="false"
                         android:hint="@string/hora_entrega_hint"
                         android:inputType="text"
-                        android:minHeight="48dp"
+                        android:minHeight="@dimen/altura_cuadro_texto"
                         android:onClick="mostarHora"
                         android:shadowColor="@color/black"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
-                        android:textColorHint="@color/material_dynamic_neutral40" />
+                        android:textColorHint="@color/material_dynamic_neutral40"
+                        android:autofillHints="" />
 
                     <EditText
                         android:id="@+id/editTextCantidad"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
+                        android:layout_margin="@dimen/margen_reducido"
                         android:background="?attr/editTextBackground"
                         android:backgroundTint="@color/black"
                         android:ems="10"
                         android:hint="@string/introduce_la_cantidad"
                         android:inputType="number"
-                        android:minHeight="48dp"
+                        android:minHeight="@dimen/altura_cuadro_texto"
                         android:shadowColor="@color/black"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
-                        android:textColorHint="@color/material_dynamic_neutral40" />
+                        android:textColorHint="@color/material_dynamic_neutral40"
+                        android:autofillHints="" />
                 </LinearLayout>
 
                 <ImageView
@@ -288,8 +297,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/wellplayedlogo" />
+                    android:layout_margin="@dimen/margen_basico"
+                    android:contentDescription="@string/portadas" />
 
             </LinearLayout>
 
@@ -297,18 +306,17 @@
                 android:id="@+id/radioButtonGrupo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp">
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginBottom="@dimen/margen_basico">
 
                 <RadioButton
                     android:id="@+id/radioButtonSocio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:height="@dimen/altura_cuadro_texto_input"
+                    android:height="@dimen/altura_cuadro_texto"
                     android:backgroundTint="@color/black"
                     android:checked="false"
-                    android:minHeight="@dimen/altura_cuadro_texto_input"
+                    android:minHeight="@dimen/altura_cuadro_texto"
                     android:shadowColor="@color/black"
                     android:text="@string/soy_socio_reclamo_mi_descuento"
                     android:textColor="@color/material_dynamic_neutral10"
@@ -318,10 +326,10 @@
                     android:id="@+id/radioButtonNoSocio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:height="@dimen/altura_cuadro_texto_input"
+                    android:height="@dimen/altura_cuadro_texto"
                     android:backgroundTint="@color/black"
                     android:checked="true"
-                    android:minHeight="@dimen/altura_cuadro_texto_input"
+                    android:minHeight="@dimen/altura_cuadro_texto"
                     android:shadowColor="@color/black"
                     android:text="@string/no_soy_socio_no_tengo_descuento"
                     android:textColor="@color/material_dynamic_neutral10"
@@ -338,8 +346,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:layout_gravity="center_vertical"
-                    android:layout_margin="5dp"
-                    android:height="@dimen/altura_cuadro_texto_input"
+                    android:layout_margin="@dimen/margen_reducido"
+                    android:height="@dimen/altura_cuadro_texto"
                     android:backgroundTint="@color/black"
                     android:checked="false"
                     android:shadowColor="@color/black"
@@ -352,11 +360,11 @@
                     android:id="@+id/buttonSiguiente"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right|center_vertical|end"
-                    android:layout_margin="5dp"
-                    android:height="@dimen/altura_cuadro_texto_input"
-                    android:backgroundTint="@android:color/holo_blue_bright"
-                    android:minHeight="48dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_margin="@dimen/margen_reducido"
+                    android:height="@dimen/altura_cuadro_texto"
+                    android:backgroundTint="@color/material_dynamic_primary70"
+                    android:minHeight="@dimen/altura_cuadro_texto"
                     android:onClick="irSiguiente"
                     android:text="@string/siguiente"
                     android:textColor="@android:color/black" />

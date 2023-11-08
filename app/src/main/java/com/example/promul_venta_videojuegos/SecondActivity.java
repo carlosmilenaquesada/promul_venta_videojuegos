@@ -4,7 +4,10 @@ import static com.example.promul_venta_videojuegos.MainActivity.PRIMER_ACTIVITY_
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +30,7 @@ public class SecondActivity extends AppCompatActivity{
 	TextView subtotalMostrar;
 	TextView ivaMostrar;
 	TextView totalAPagarMostrar;
+	RadioGroup radioGroupPagar;
 	Compra compra;
 	//----------------------------------------------------------------------------------------------
 	float precioUdSinIVa = 0.0f;
@@ -42,25 +46,34 @@ public class SecondActivity extends AppCompatActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second);
 		Intent intent = getIntent();
-		if(intent == null){
+		if(intent != null){
+			nombreClienteMostrar = findViewById(R.id.textViewSecondNombreClienteMostrar);
+			plataformaMostrar = findViewById(R.id.textViewSecondPlataformaMostrar);
+			generoMostrar = findViewById(R.id.textViewSecondGeneroMostrar);
+			tituloMostrar = findViewById(R.id.textViewSecondTituloMostrar);
+			fechaYHoraMostrar = findViewById(R.id.textViewSecondFechaYHoraMostrar);
+			precioUnidadMostrar = findViewById(R.id.textViewSecondPrecioUnidadMostrar);
+			esSocioMostrar = findViewById(R.id.textViewSecondEsSocioMostrar);
+			//------------------------------------------------------------------------------------------
+			cantidadMostrar = findViewById(R.id.textViewSecondCantidadMostrar);
+			precioUnidadSinIvaMostrar = findViewById(R.id.textViewSecondPrecioUnidadSinIvaMostrar);
+			descuentoMostrar = findViewById(R.id.textViewSecondDescuentoMostrar);
+			//------------------------------------------------------------------------------------------
+			subtotalMostrar = findViewById(R.id.textViewSecondSubtotalMostrar);
+			ivaMostrar = findViewById(R.id.textViewSecondIvaMostrar);
+			totalAPagarMostrar = findViewById(R.id.textViewSecondTotalAPagarMostrar);
+			//------------------------------------------------------------------------------------------
+			radioGroupPagar = findViewById(R.id.radioGroupPagar);
+			//------------------------------------------------------------------------------------------
+			rellenarDatosCompra(intent);
+			//------------------------------------------------------------------------------------------
+			rellenarDesgloseImporte();
+		}else{
 			this.finishAffinity();
 		}
-		nombreClienteMostrar = findViewById(R.id.textViewSecondNombreClienteMostrar);
-		plataformaMostrar = findViewById(R.id.textViewSecondPlataformaMostrar);
-		generoMostrar = findViewById(R.id.textViewSecondGeneroMostrar);
-		tituloMostrar = findViewById(R.id.textViewSecondTituloMostrar);
-		fechaYHoraMostrar = findViewById(R.id.textViewSecondFechaYHoraMostrar);
-		precioUnidadMostrar = findViewById(R.id.textViewSecondPrecioUnidadMostrar);
-		esSocioMostrar = findViewById(R.id.textViewSecondEsSocioMostrar);
-		//------------------------------------------------------------------------------------------
-		cantidadMostrar = findViewById(R.id.textViewSecondCantidadMostrar);
-		precioUnidadSinIvaMostrar = findViewById(R.id.textViewSecondPrecioUnidadSinIvaMostrar);
-		descuentoMostrar = findViewById(R.id.textViewSecondDescuentoMostrar);
-		//------------------------------------------------------------------------------------------
-		subtotalMostrar = findViewById(R.id.textViewSecondSubtotalMostrar);
-		ivaMostrar = findViewById(R.id.textViewSecondIvaMostrar);
-		totalAPagarMostrar = findViewById(R.id.textViewSecondTotalAPagarMostrar);
-		//------------------------------------------------------------------------------------------
+	}
+
+	private void rellenarDatosCompra(Intent intent){
 		compra = (Compra) intent.getSerializableExtra(PRIMER_ACTIVITY_COMPRA);
 		df = new DecimalFormat("0.00");
 		df.setRoundingMode(RoundingMode.UP);
@@ -68,12 +81,14 @@ public class SecondActivity extends AppCompatActivity{
 		plataformaMostrar.setText(compra.getPlataforma());
 		generoMostrar.setText(compra.getGenero());
 		tituloMostrar.setText(compra.getTitulo());
-		fechaYHoraMostrar.setText(compra.getFecha() + " " + compra.getHora());
+		String fechaHora = compra.getFecha() + " - " + compra.getHora();
+		fechaYHoraMostrar.setText(fechaHora);
 		precioUnidadMostrar.setText(df.format(compra.getPrecioUnidad()));
 		String esSocio = compra.getEsSocio() ? "Sí: 15% Dto." : "No: Sin descuento";
 		esSocioMostrar.setText(esSocio);
-		//------------------------------------------------------------------------------------------
+	}
 
+	private void rellenarDesgloseImporte(){
 		cantidadMostrar.setText(String.valueOf(compra.getCantidad()));
 		precioUdSinIVa = Float.parseFloat((String) precioUnidadMostrar.getText()) / 1.21f;
 		precioUnidadSinIvaMostrar.setText(df.format(precioUdSinIVa));
@@ -86,5 +101,22 @@ public class SecondActivity extends AppCompatActivity{
 		ivaMostrar.setText(df.format(importeIva));
 		totalAPagar = subtotalMenosDescuento * 1.21f;
 		totalAPagarMostrar.setText(df.format(totalAPagar));
+	}
+
+	public void realizarPago(View view){
+		int idSeleccionada = radioGroupPagar.getCheckedRadioButtonId();
+		String texto = "Debe elegir una forma de pago";
+		if(idSeleccionada == R.id.radioButtonPagoEfectivo){
+			texto = "Se ha tramitado el pago en efectivo en la entrega.";
+		}else{
+			if(idSeleccionada == R.id.radioButtonTarjeta){
+				texto = "Se ha tramitado el pago con tarjeta.";
+			}else{
+				if(idSeleccionada == R.id.radioButtonPayPal){
+					texto = "Se ha tramitado el pago con PayPal.";
+				}
+			}
+		}
+		Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
 	}
 }
