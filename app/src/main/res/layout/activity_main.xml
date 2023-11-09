@@ -159,7 +159,7 @@
                         android:height="@dimen/altura_cuadro_texto"
                         android:backgroundTint="@color/black"
                         android:shadowColor="@color/black"
-                        android:text="@string/g_nero"
+                        android:text="@string/genero"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
                         android:textSize="@dimen/tamaño_fuente_basica" />
@@ -175,7 +175,7 @@
                         android:height="@dimen/altura_cuadro_texto"
                         android:backgroundTint="@color/black"
                         android:shadowColor="@color/black"
-                        android:text="@string/t_tulo"
+                        android:text="@string/titulo"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
                         android:textSize="@dimen/tamaño_fuente_basica" />

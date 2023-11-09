@@ -30,7 +30,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 	public static final String PRIMER_ACTIVITY_COMPRA =
-			"promul_venta_videojuegos.MainActivity" + ".PRIMER_ACTIVITY_COMPRA";
+			"promul_venta_videojuegos.MainActivity.PRIMER_ACTIVITY_COMPRA";
 	EditText editTextNombreUsuario;
 	EditText editTextPasswordUsuario;
 	Spinner spinnerPlataforma;
@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	ArrayAdapter<String> adapterTitulo;
 	Compra compra;
 	JuegoPrecioPortada juegoPrecioPortada;
-DecimalFormat dm;
+	DecimalFormat dm;
+
 	@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -117,10 +118,10 @@ DecimalFormat dm;
 
 	public void actualizarPrecioJuego(){
 		float precioJuego = juegoPrecioPortada.getPrecioJuego();
-		String mensajePrecio = "Sin descuento:\n" + dm.format(precioJuego) + "€";
+		String mensajePrecio = getString(R.string.sin_descuento) + "\n" + dm.format(precioJuego) + getString(R.string.simbolo_euro);
 		if(radioButtonSocio.isChecked()){
 			precioJuego = precioJuego / 1.15f;
-			mensajePrecio = "15% descuento:\n" + dm.format(precioJuego) + "€";
+			mensajePrecio = getString(R.string.n15_descuento)+"\n" + dm.format(precioJuego) + getString(R.string.simbolo_euro);
 		}
 		textViewPrecioMostrar.setText(mensajePrecio);
 	}
@@ -157,7 +158,7 @@ DecimalFormat dm;
 	}
 
 	private void hack(){
-		compra = new Compra("felipe", "playstation", "acción", "tombraider", 10.0f, 5, "20/03/2023"
+		compra = new Compra("felipefelipefelipefelipefelipefelipe ", "playstation", "acción", "tombraider", 10.0f, 5, "20/03/2023"
 				, "07:30", true);
 		Intent intent = new Intent(this, SecondActivity.class);
 		intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
@@ -168,31 +169,31 @@ DecimalFormat dm;
 		boolean hayErrores = false;
 		if(!checkBoxCondiciones.isChecked()){
 			hayErrores = true;
-			Toast.makeText(this, "Debe aceptar las condiciones.", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getString(R.string.debe_aceptar_condiciones), Toast.LENGTH_SHORT).show();
 		}
 		String nombreUsuario = String.valueOf(editTextNombreUsuario.getText());
 		if(nombreUsuario.isEmpty()){
 			hayErrores = true;
-			editTextNombreUsuario.setError("El nombre no puede estar vacío.");
+			editTextNombreUsuario.setError(getString(R.string.nombre_no_puede_estar_vacio));
 		}
 		if(String.valueOf(editTextPasswordUsuario.getText()).isEmpty()){
 			hayErrores = true;
-			editTextPasswordUsuario.setError("La contraseña no puede estar vacía.");
+			editTextPasswordUsuario.setError(getString(R.string.contrasena_no_puede_estar_vacia));
 		}
 		String cantidad = String.valueOf(editTextCantidad.getText());
 		if(cantidad.isEmpty()){
 			hayErrores = true;
-			editTextCantidad.setError("La cantidad no puede estar vacía.");
+			editTextCantidad.setError(getString(R.string.cantidad_no_puede_estar_vacia));
 		}
 		String fechaEntrega = String.valueOf(editTextFechaEntrega.getText());
 		if(fechaEntrega.isEmpty()){
 			hayErrores = true;
-			editTextFechaEntrega.setError("Debe introducir una fecha.");
+			editTextFechaEntrega.setError(getString(R.string.debe_introducir_fecha));
 		}
 		String horaEntrega = String.valueOf(editTextHoraEntrega.getText());
 		if(horaEntrega.isEmpty()){
 			hayErrores = true;
-			editTextHoraEntrega.setError("Debe introducir una hora");
+			editTextHoraEntrega.setError(getString(R.string.debe_introducir_hora));
 		}
 		if(!hayErrores){
 			compra = new Compra(nombreUsuario, String.valueOf(spinnerPlataforma.getSelectedItem())

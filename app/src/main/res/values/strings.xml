@@ -1,38 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Textos de la app-->
     <string name="app_name">promul_venta_videojuegos</string>
-    <string name="wellplayed">wellplayed</string>
-    <string name="subtitulo_cabecera">Your Videogames Shop</string>
-    <string name="logotipo">logotipo</string>
-    <string name="introduce_tu_nombre">Introduce tu nombre</string>
-    <string name="introduce_tu_contrase_a">Introduce tu contraseña</string>
-    <string name="plataforma">Plataforma</string>
-    <string name="g_nero">Género\n</string>
-    <string name="t_tulo">Título</string>
-    <string name="fecha_entrega_hint">Fecha de entrega</string>
-    <string name="hora_entrega_hint">Hora de entrega</string>
-    <string name="introduce_la_cantidad">Introduce la cantidad</string>
-    <string name="soy_socio_reclamo_mi_descuento">Soy socio, reclamo mi descuento</string>
-    <string name="no_soy_socio_no_tengo_descuento">No soy socio, no tengo descuento</string>
-    <string name="acepto_los_t_rminos_y_condiciones">Acepto los términos y condiciones</string>
-    <string name="siguiente">Siguiente</string>
-    <string name="portadas">portadas</string>
-    <string name="pagar">Pagar</string>
-    <string name="efectivo_en_entrega">Efectivo</string>
+    <string name="wellplayed">WellPlayed</string>
+    <string name="subtitulo_cabecera">Your Videogame Store</string>
+    <string name="logotipo">Logo</string>
+    <string name="introduce_tu_nombre">Enter Your Name</string>
+    <string name="introduce_tu_contrase_a">Enter Your Password</string>
+    <string name="plataforma">Platform</string>
+    <string name="genero">Genre</string>
+    <string name="titulo">Title</string>
+    <string name="fecha_entrega_hint">Delivery Date</string>
+    <string name="hora_entrega_hint">Delivery Time</string>
+    <string name="introduce_la_cantidad">Enter the Quantity</string>
+    <string name="soy_socio_reclamo_mi_descuento">I am a member, Claim My Discount</string>
+    <string name="no_soy_socio_no_tengo_descuento">I am not a member, No Discount Available</string>
+    <string name="acepto_los_t_rminos_y_condiciones">I Accept the Terms and Conditions</string>
+    <string name="siguiente">Next</string>
+    <string name="portadas">Covers</string>
+    <string name="pagar">Pay</string>
+    <string name="efectivo_en_entrega">Cash on Delivery</string>
     <string name="paypal">PayPal</string>
-    <string name="tarjeta">Tarjeta</string>
-    <string name="elija_la_forma_de_pago">Elija la forma de pago</string>
-    <string name="cantidad">Cantidad</string>
-    <string name="descuento">Descuento</string>
-    <string name="desglose">Desglose</string>
-    <string name="es_socio">Es socio</string>
-    <string name="fecha_entrega">Fecha entrega</string>
-    <string name="iva_21">IVA 21%</string>
-    <string name="nombre_cliente">Nombre cliente</string>
-    <string name="precio_unidad">Precio unidad</string>
-    <string name="precio_ud_sin_iva">Precio ud. sin IVA</string>
-    <string name="subtotal_sin_iva">Subtotal sin IVA</string>
-    <string name="total_a_pagar">Total a pagar</string>
+    <string name="tarjeta">Credit Card</string>
+    <string name="elija_la_forma_de_pago">Choose the Payment Method</string>
+    <string name="cantidad">Quantity</string>
+    <string name="descuento">Discount</string>
+    <string name="desglose">Breakdown</string>
+    <string name="es_socio">Is a Member</string>
+    <string name="fecha_entrega">Delivery Date</string>
+    <string name="iva_21">VAT 21%</string>
+    <string name="nombre_cliente">Customer Name</string>
+    <string name="precio_unidad">Unit Price</string>
+    <string name="precio_ud_sin_iva">Unit Price (Excl. VAT)</string>
+    <string name="subtotal_sin_iva">Subtotal (Excl. VAT)</string>
+    <string name="total_a_pagar">Total Amount Due</string>
     <string name="total">Total</string>
-    <string name="datos_de_la_compra">Datos de la compra</string>
+    <string name="datos_de_la_compra">Purchase Details</string>
 
+
+    <!-- Texts for Pop-up Messages - MainActivity -->
+    <string name="sin_descuento">No discount:</string>
+    <string name="simbolo_euro">€</string>
+    <string name="n15_descuento">15% discount:</string>
+    <string name="debe_aceptar_condiciones">You must accept the terms and conditions.</string>
+    <string name="nombre_no_puede_estar_vacio">The name cannot be empty.</string>
+    <string name="contrasena_no_puede_estar_vacia">The password cannot be empty.</string>
+    <string name="cantidad_no_puede_estar_vacia">The quantity cannot be empty.</string>
+    <string name="debe_introducir_fecha">You must enter a date.</string>
+    <string name="debe_introducir_hora">You must enter a time.</string>
+
+    <!-- Texts for Pop-up Messages - SecondActivity -->
+    <string name="si_15_descuento">Yes: 15% Discount.</string>
+    <string name="no_sin_descuento">No: No discount.</string>
+    <string name="debe_elegir_forma_pago">You must choose a payment method.</string>
+    <string name="pago_efectivo_entrega">Payment in cash on delivery has been processed.</string>
+    <string name="pago_con_tarjeta">Payment with a credit card has been processed.</string>
+    <string name="pago_con_paypal">Payment with PayPal has been processed.</string>
 </resources>

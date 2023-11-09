@@ -84,7 +84,8 @@ public class SecondActivity extends AppCompatActivity{
 		String fechaHora = compra.getFecha() + " - " + compra.getHora();
 		fechaYHoraMostrar.setText(fechaHora);
 		precioUnidadMostrar.setText(df.format(compra.getPrecioUnidad()));
-		String esSocio = compra.getEsSocio() ? "Sí: 15% Dto." : "No: Sin descuento";
+		String esSocio = compra.getEsSocio() ? getString(R.string.si_15_descuento) :
+								 getString(R.string.no_sin_descuento);
 		esSocioMostrar.setText(esSocio);
 	}
 
@@ -105,15 +106,15 @@ public class SecondActivity extends AppCompatActivity{
 
 	public void realizarPago(View view){
 		int idSeleccionada = radioGroupPagar.getCheckedRadioButtonId();
-		String texto = "Debe elegir una forma de pago";
+		String texto = getString(R.string.debe_elegir_forma_pago);
 		if(idSeleccionada == R.id.radioButtonPagoEfectivo){
-			texto = "Se ha tramitado el pago en efectivo en la entrega.";
+			texto = getString(R.string.pago_efectivo_entrega);
 		}else{
 			if(idSeleccionada == R.id.radioButtonTarjeta){
-				texto = "Se ha tramitado el pago con tarjeta.";
+				texto = getString(R.string.pago_con_tarjeta);
 			}else{
 				if(idSeleccionada == R.id.radioButtonPayPal){
-					texto = "Se ha tramitado el pago con PayPal.";
+					texto = getString(R.string.pago_con_paypal);
 				}
 			}
 		}

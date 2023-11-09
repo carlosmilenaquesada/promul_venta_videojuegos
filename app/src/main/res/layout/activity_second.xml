@@ -52,16 +52,18 @@
                     android:singleLine="true"
                     android:text="@string/nombre_cliente"
                     android:textColor="@color/material_dynamic_neutral10"
-                    android:textSize="@dimen/tamaño_fuente_media" />
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewSecondNombreClienteMostrar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:singleLine="true"
+                    android:singleLine="false"
                     android:textColor="@color/material_dynamic_neutral10"
                     android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
                     app:autoSizeTextType="uniform" />
 
             </LinearLayout>
@@ -84,16 +86,18 @@
                     android:singleLine="true"
                     android:text="@string/plataforma"
                     android:textColor="@color/material_dynamic_neutral10"
-                    android:textSize="@dimen/tamaño_fuente_media" />
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewSecondPlataformaMostrar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:singleLine="true"
+                    android:singleLine="false"
                     android:textColor="@color/material_dynamic_neutral10"
                     android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
                     app:autoSizeTextType="uniform" />
             </LinearLayout>
 
@@ -113,18 +117,20 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:singleLine="true"
-                    android:text="@string/g_nero"
+                    android:text="@string/genero"
                     android:textColor="@color/material_dynamic_neutral10"
-                    android:textSize="@dimen/tamaño_fuente_media" />
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewSecondGeneroMostrar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:singleLine="true"
+                    android:singleLine="false"
                     android:textColor="@color/material_dynamic_neutral10"
                     android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
                     app:autoSizeTextType="uniform" />
             </LinearLayout>
 
@@ -144,18 +150,20 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:singleLine="true"
-                    android:text="@string/t_tulo"
+                    android:text="@string/titulo"
                     android:textColor="@color/material_dynamic_neutral10"
-                    android:textSize="@dimen/tamaño_fuente_media" />
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewSecondTituloMostrar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:singleLine="true"
+                    android:singleLine="false"
                     android:textColor="@color/material_dynamic_neutral10"
-                    android:textSize="@dimen/tamaño_fuente_media" />
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic" />
             </LinearLayout>
 
             <LinearLayout
@@ -176,16 +184,18 @@
                     android:singleLine="true"
                     android:text="@string/fecha_entrega"
                     android:textColor="@color/material_dynamic_neutral10"
-                    android:textSize="@dimen/tamaño_fuente_media" />
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewSecondFechaYHoraMostrar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:singleLine="true"
+                    android:singleLine="false"
                     android:textColor="@color/material_dynamic_neutral10"
                     android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
                     app:autoSizeTextType="uniform" />
             </LinearLayout>
 
@@ -207,16 +217,18 @@
                     android:singleLine="true"
                     android:text="@string/precio_unidad"
                     android:textColor="@color/material_dynamic_neutral10"
-                    android:textSize="@dimen/tamaño_fuente_media" />
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewSecondPrecioUnidadMostrar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:singleLine="true"
+                    android:singleLine="false"
                     android:textColor="@color/material_dynamic_neutral10"
                     android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
                     app:autoSizeTextType="uniform" />
             </LinearLayout>
 
@@ -238,22 +250,25 @@
                     android:singleLine="true"
                     android:text="@string/es_socio"
                     android:textColor="@color/material_dynamic_neutral10"
-                    android:textSize="@dimen/tamaño_fuente_media" />
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewSecondEsSocioMostrar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:singleLine="true"
+                    android:singleLine="false"
                     android:textColor="@color/material_dynamic_neutral10"
                     android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
                     app:autoSizeTextType="uniform" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="@dimen/margen_basico"
                 android:layout_marginTop="@dimen/margen_grande"
                 android:layout_marginEnd="@dimen/margen_basico"
@@ -281,7 +296,7 @@
 
                     <TextView
                         android:id="@+id/textViewSecondCantidad"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/material_dynamic_neutral90"
                         android:padding="@dimen/margen_muy_reducido"
@@ -307,7 +322,7 @@
 
                     <TextView
                         android:id="@+id/textViewSecondPrecioUnidadSinIva"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/material_dynamic_neutral90"
                         android:padding="@dimen/margen_muy_reducido"
@@ -327,7 +342,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margen_reducido"
                     android:orientation="vertical">
@@ -355,12 +370,12 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="@dimen/margen_basico"
                 android:layout_marginTop="@dimen/margen_basico"
                 android:layout_marginEnd="@dimen/margen_basico"
-                android:layout_weight="1"
                 android:background="@color/white"
                 android:orientation="horizontal"
                 android:padding="@dimen/margen_reducido">
@@ -385,7 +400,7 @@
 
                     <TextView
                         android:id="@+id/textViewSecondSubtotal"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/material_dynamic_neutral90"
                         android:padding="@dimen/margen_muy_reducido"
@@ -412,7 +427,7 @@
 
                     <TextView
                         android:id="@+id/textViewSecondIva"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/material_dynamic_neutral90"
                         android:padding="@dimen/margen_muy_reducido"
@@ -432,7 +447,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margen_reducido"
                     android:orientation="vertical">
@@ -463,12 +478,14 @@
             <TextView
                 android:id="@+id/textViewFormaPago"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margen_grande"
                 android:layout_weight="1"
                 android:text="@string/elija_la_forma_de_pago"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/tamaño_fuente_pequeña"
+                android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/radioGroupPagar"
