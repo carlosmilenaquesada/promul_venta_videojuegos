@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/txt_item1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margen_muy_reducido"
+    android:background="@android:drawable/spinner_background"
+    android:backgroundTint="@color/material_dynamic_primary80"
+    android:backgroundTintMode="multiply"
+    android:gravity="center"
+    android:singleLine="true"
+    android:textColor="@color/black"
+    android:textSize="@dimen/tamaño_fuente_pequeña" />

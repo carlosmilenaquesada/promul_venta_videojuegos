@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:drawable/dialog_holo_dark_frame"
+    android:backgroundTint="@color/material_dynamic_primary90"
+    tools:context=".SecondActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:backgroundTint="@color/material_dynamic_primary90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/material_dynamic_primary90"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewTituloDatosCompra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:padding="@dimen/margen_reducido"
+                android:text="@string/datos_de_la_compra"
+                android:textAlignment="center"
+                android:textColor="@color/material_dynamic_neutral10"
+                android:textSize="@dimen/tamaño_fuente_grande" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:layout_marginEnd="@dimen/margen_basico"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margen_reducido">
+
+                <TextView
+                    android:id="@+id/textViewSecondNombreCliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/nombre_cliente"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSecondNombreClienteMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:layout_marginEnd="@dimen/margen_basico"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margen_reducido">
+
+                <TextView
+                    android:id="@+id/textViewSecondPlataforma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/plataforma"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSecondPlataformaMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:layout_marginEnd="@dimen/margen_basico"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margen_reducido">
+
+                <TextView
+                    android:id="@+id/textViewSecondGenero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/genero"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSecondGeneroMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:layout_marginEnd="@dimen/margen_basico"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margen_reducido">
+
+                <TextView
+                    android:id="@+id/textViewSecondTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/titulo"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSecondTituloMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:layout_marginEnd="@dimen/margen_basico"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margen_reducido">
+
+                <TextView
+                    android:id="@+id/textViewSecondFechaYHora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/fecha_entrega"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSecondFechaYHoraMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:layout_marginEnd="@dimen/margen_basico"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margen_reducido">
+
+                <TextView
+                    android:id="@+id/textViewSecondPrecioUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/precio_unidad"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSecondPrecioUnidadMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:layout_marginEnd="@dimen/margen_basico"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margen_reducido">
+
+                <TextView
+                    android:id="@+id/textViewSecondEsSocio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/es_socio"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSecondEsSocioMostrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textSize="@dimen/tamaño_fuente_media"
+                    android:textStyle="italic"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginTop="@dimen/margen_grande"
+                android:layout_marginEnd="@dimen/margen_basico"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margen_reducido">
+
+                <TextView
+                    android:id="@+id/textViewSecondDesglose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/material_dynamic_neutral70"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/margen_muy_reducido"
+                    android:singleLine="true"
+                    android:text="@string/desglose"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margen_reducido"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondCantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="@dimen/margen_muy_reducido"
+                        android:singleLine="true"
+                        android:text="@string/cantidad"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondCantidadMostrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/material_dynamic_neutral10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margen_reducido"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondPrecioUnidadSinIva"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="@dimen/margen_muy_reducido"
+                        android:singleLine="true"
+                        android:text="@string/precio_ud_sin_iva"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondPrecioUnidadSinIvaMostrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/material_dynamic_neutral10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margen_reducido"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondDescuento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="@dimen/margen_muy_reducido"
+                        android:singleLine="true"
+                        android:text="@string/descuento"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondDescuentoMostrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/material_dynamic_neutral10" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margen_basico"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:layout_marginEnd="@dimen/margen_basico"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margen_reducido">
+
+                <TextView
+                    android:id="@+id/textViewSecondTotalFactura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/material_dynamic_neutral70"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/margen_muy_reducido"
+                    android:singleLine="true"
+                    android:text="@string/total"
+                    android:textColor="@color/material_dynamic_neutral10"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margen_reducido"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondSubtotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="@dimen/margen_muy_reducido"
+                        android:singleLine="true"
+                        android:text="@string/subtotal_sin_iva"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondSubtotalMostrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/material_dynamic_neutral10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margen_reducido"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondIva"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="@dimen/margen_muy_reducido"
+                        android:singleLine="true"
+                        android:text="@string/iva_21"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondIvaMostrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/material_dynamic_neutral10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margen_reducido"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewSecondTotalAPagar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/material_dynamic_neutral90"
+                        android:padding="@dimen/margen_muy_reducido"
+                        android:singleLine="true"
+                        android:text="@string/total_a_pagar"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewSecondTotalAPagarMostrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/material_dynamic_neutral10" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewFormaPago"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margen_grande"
+                android:layout_weight="1"
+                android:text="@string/elija_la_forma_de_pago"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tamaño_fuente_pequeña"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupPagar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonPagoEfectivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margen_reducido"
+                    android:padding="@dimen/margen_reducido"
+                    android:text="@string/efectivo_en_entrega"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTarjeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margen_reducido"
+                    android:padding="@dimen/margen_reducido"
+                    android:text="@string/tarjeta"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonPayPal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margen_reducido"
+                    android:padding="@dimen/margen_reducido"
+                    android:text="@string/paypal"
+                    android:textColor="@color/black" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margen_basico"
+                android:backgroundTint="@color/material_dynamic_primary70"
+                android:backgroundTintMode="add"
+                android:onClick="realizarPago"
+                android:shadowColor="@color/black"
+                android:text="@string/pagar" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
