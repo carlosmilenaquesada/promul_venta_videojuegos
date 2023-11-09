@@ -83,43 +83,72 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editTextNombreUsuario"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen_reducido"
-                android:height="@dimen/altura_cuadro_texto"
-                android:background="?attr/editTextBackground"
-                android:backgroundTint="@color/black"
-                android:backgroundTintMode="multiply"
-                android:ems="10"
-                android:hint="@string/introduce_tu_nombre"
-                android:inputType="text"
-                android:minHeight="@dimen/altura_cuadro_texto"
-                android:shadowColor="@color/black"
-                android:textColor="@color/material_dynamic_neutral10"
-                android:textColorHighlight="@color/material_dynamic_neutral40"
-                android:textColorHint="@color/material_dynamic_neutral40"
-                tools:ignore="VisualLintTextFieldSize"
-                android:autofillHints="" />
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/editTextPasswordUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen_reducido"
-                android:height="@dimen/altura_cuadro_texto"
-                android:background="?attr/editTextBackground"
-                android:backgroundTint="@color/black"
-                android:ems="10"
-                android:hint="@string/introduce_tu_contrase_a"
-                android:inputType="textPassword"
-                android:minHeight="@dimen/altura_cuadro_texto"
-                android:shadowColor="@color/black"
-                android:textColor="@color/material_dynamic_neutral10"
-                android:textColorHighlight="@color/material_dynamic_neutral40"
-                android:textColorHint="@color/material_dynamic_neutral40"
-                android:autofillHints="" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/editTextNombreUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margen_reducido"
+                        android:height="@dimen/altura_cuadro_texto"
+                        android:autofillHints=""
+                        android:background="?attr/editTextBackground"
+                        android:backgroundTint="@color/black"
+                        android:backgroundTintMode="multiply"
+                        android:ems="10"
+                        android:hint="@string/introduce_tu_nombre"
+                        android:inputType="text"
+                        android:minHeight="@dimen/altura_cuadro_texto"
+                        android:shadowColor="@color/black"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textColorHighlight="@color/material_dynamic_neutral40"
+                        android:textColorHint="@color/material_dynamic_neutral40"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                    <EditText
+                        android:id="@+id/editTextPasswordUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margen_reducido"
+                        android:height="@dimen/altura_cuadro_texto"
+                        android:autofillHints=""
+                        android:background="?attr/editTextBackground"
+                        android:backgroundTint="@color/black"
+                        android:ems="10"
+                        android:hint="@string/introduce_tu_contrase_a"
+                        android:inputType="textPassword"
+                        android:minHeight="@dimen/altura_cuadro_texto"
+                        android:shadowColor="@color/black"
+                        android:textColor="@color/material_dynamic_neutral10"
+                        android:textColorHighlight="@color/material_dynamic_neutral40"
+                        android:textColorHint="@color/material_dynamic_neutral40" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/margen_basico"
+                        android:layout_marginEnd="@dimen/margen_basico"
+                        android:minHeight="@dimen/altura_cuadro_texto"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
