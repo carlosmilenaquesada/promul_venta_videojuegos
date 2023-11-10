@@ -136,14 +136,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Spinner
-                        android:id="@+id/spinner"
+                    <ToggleButton
+                        android:id="@+id/toggleButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/margen_basico"
                         android:layout_marginEnd="@dimen/margen_basico"
-                        android:minHeight="@dimen/altura_cuadro_texto"
+                        android:onClick="setLocale"
+                        android:text="ToggleButton"
+                        android:textOff="Español"
+                        android:textOn="English"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>

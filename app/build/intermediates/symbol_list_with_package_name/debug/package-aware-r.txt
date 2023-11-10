@@ -3508,7 +3508,6 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
-id spinner
 id spinnerGenero
 id spinnerPlataforma
 id spinnerTitulo
@@ -3605,6 +3604,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toggleButton
 id top
 id topPanel
 id touch_outside

@@ -6,6 +6,8 @@ import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaJue
 import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaPlataformas;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -27,10 +29,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 	public static final String PRIMER_ACTIVITY_COMPRA =
-			"promul_venta_videojuegos.MainActivity.PRIMER_ACTIVITY_COMPRA";
+			"promul_venta_videojuegos.MainActivity" + ".PRIMER_ACTIVITY_COMPRA";
 	EditText editTextNombreUsuario;
 	EditText editTextPasswordUsuario;
 	Spinner spinnerPlataforma;
@@ -99,7 +102,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			if(parentId == R.id.spinnerGenero){
 				genero = position;
 			}else{
-				titulo = position;
+				if(parentId == R.id.spinnerTitulo){
+					titulo = position;
+				}
 			}
 		}
 		JuegoPrecioPortada[][] plat = (JuegoPrecioPortada[][]) listaJuegos[plataforma];
@@ -116,12 +121,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		actualizarPrecioJuego();
 	}
 
+	public void setLocale(View view){
+		Resources resources = getResources();
+		Configuration config = resources.getConfiguration();
+		String idioma = config.getLocales().get(0).toLanguageTag();
+		Locale locale;
+		if(idioma.equals("es")){
+			locale = new Locale("en-us");
+		}else {
+			locale = new Locale("es");
+		}
+
+		config.setLocale(locale);
+		resources.updateConfiguration(config, resources.getDisplayMetrics());
+		recreate();
+	}
+
 	public void actualizarPrecioJuego(){
 		float precioJuego = juegoPrecioPortada.getPrecioJuego();
-		String mensajePrecio = getString(R.string.sin_descuento) + "\n" + dm.format(precioJuego) + getString(R.string.simbolo_euro);
+		String mensajePrecio = getString(R.string.sin_descuento) + "\n" + dm.format(precioJuego) +
+							   getString(R.string.simbolo_euro);
 		if(radioButtonSocio.isChecked()){
 			precioJuego = precioJuego / 1.15f;
-			mensajePrecio = getString(R.string.n15_descuento)+"\n" + dm.format(precioJuego) + getString(R.string.simbolo_euro);
+			mensajePrecio = getString(R.string.n15_descuento) + "\n" + dm.format(precioJuego) +
+							getString(R.string.simbolo_euro);
 		}
 		textViewPrecioMostrar.setText(mensajePrecio);
 	}
@@ -158,8 +181,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	}
 
 	private void hack(){
-		compra = new Compra("felipefelipefelipefelipefelipefelipe ", "playstation", "acción", "tombraider", 10.0f, 5, "20/03/2023"
-				, "07:30", true);
+		compra = new Compra("felipefelipefelipefelipefelipefelipe ", "playstation", "acción",
+				"tombraider", 10.0f, 5, "20/03/2023", "07:30", true);
 		Intent intent = new Intent(this, SecondActivity.class);
 		intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
 		startActivity(intent);
@@ -169,7 +192,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		boolean hayErrores = false;
 		if(!checkBoxCondiciones.isChecked()){
 			hayErrores = true;
-			Toast.makeText(this, getString(R.string.debe_aceptar_condiciones), Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getString(R.string.debe_aceptar_condiciones), Toast.LENGTH_SHORT)
+			.show();
+
 		}
 		String nombreUsuario = String.valueOf(editTextNombreUsuario.getText());
 		if(nombreUsuario.isEmpty()){

@@ -86,4 +86,6 @@ public class SimuladorBaseDeDatos{
 			"Nintendo Switch"};
 	public static final String[] listaGeneros = {"Acción", "Deportivo", "Estrategia"};
 	public static final Object[] listaJuegos = {listaPs5, listaXBoxSeries, listaNintendoSwitch};
+
+
 }

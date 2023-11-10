@@ -55,7 +55,8 @@
     <string name="pago_efectivo_entrega">Se ha tramitado el pago en efectivo en la entrega.</string>
     <string name="pago_con_tarjeta">Se ha tramitado el pago con tarjeta.</string>
     <string name="pago_con_paypal">Se ha tramitado el pago con PayPal.</string>
-
+    <string name="espa_ol">Español</string>
+    <string name="english">English</string>
 
 
 

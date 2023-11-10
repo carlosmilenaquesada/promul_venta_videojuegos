@@ -56,4 +56,6 @@
     <string name="pago_efectivo_entrega">Payment in cash on delivery has been processed.</string>
     <string name="pago_con_tarjeta">Payment with a credit card has been processed.</string>
     <string name="pago_con_paypal">Payment with PayPal has been processed.</string>
+    <string name="espa_ol">Español</string>
+    <string name="english">English</string>
 </resources>

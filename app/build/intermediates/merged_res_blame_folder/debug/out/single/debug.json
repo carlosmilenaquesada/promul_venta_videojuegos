@@ -24,16 +24,20 @@
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\playstation_horizonmontain.png"
     },
     {
-        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\layout_spinner_desplegado.xml.flat",
-        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\layout\\spinner_desplegado.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_xbox_jurassicworldevo2.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\xbox_jurassicworldevo2.png"
     },
     {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\layout_spinner_desplegado.xml.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\layout\\spinner_desplegado.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\layout_spinner_desplegado_idioma.xml.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\layout\\spinner_desplegado_idioma.xml"
     },
     {
         "merged": "com.example.promul_venta_videojuegos.app-merged_res-31:/layout_activity_main.xml.flat",
@@ -126,6 +130,10 @@
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\layout_spinner_cerrado_idioma.xml.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\layout\\spinner_cerrado_idioma.xml"
     },
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_playstation_2pointcampus.png.flat",

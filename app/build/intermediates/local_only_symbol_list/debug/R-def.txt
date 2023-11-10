@@ -67,7 +67,6 @@ id radioButtonPayPal
 id radioButtonSocio
 id radioButtonTarjeta
 id radioGroupPagar
-id spinner
 id spinnerGenero
 id spinnerPlataforma
 id spinnerTitulo
@@ -108,6 +107,7 @@ id textViewSubtituloCabecera
 id textViewTitulo
 id textViewTituloCabecera
 id textViewTituloDatosCompra
+id toggleButton
 id txt_item1
 layout activity_main
 layout activity_second
