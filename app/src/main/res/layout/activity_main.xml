@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/material_dynamic_primary90"
-    android:backgroundTint="@color/material_dynamic_primary90"
     android:orientation="vertical"
     android:scrollIndicators="start"
     android:visibility="visible"
@@ -142,6 +141,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margen_basico"
                         android:layout_marginEnd="@dimen/margen_basico"
+                        android:background="@android:drawable/btn_default_small"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
+                        android:backgroundTintMode="src_in"
                         android:onClick="setLocale"
                         android:textOff="@string/espa_ol"
                         android:textOn="@string/english"
@@ -154,12 +156,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margen_reducido"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margen_basico"
+                    android:layout_weight="1.2"
                     android:orientation="vertical">
 
                     <TextView
@@ -167,11 +171,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center_vertical"
-                        android:layout_margin="@dimen/margen_reducido"
-                        android:layout_marginEnd="@dimen/margen_basico"
-                        android:layout_weight="1"
                         android:height="@dimen/altura_cuadro_texto"
                         android:backgroundTint="@color/black"
+                        android:gravity="center"
                         android:shadowColor="@color/black"
                         android:text="@string/plataforma"
                         android:textColor="@color/material_dynamic_neutral10"
@@ -183,11 +185,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center_vertical"
-                        android:layout_margin="@dimen/margen_reducido"
-                        android:layout_marginBottom="@dimen/margen_basico"
-                        android:layout_weight="1"
                         android:height="@dimen/altura_cuadro_texto"
                         android:backgroundTint="@color/black"
+                        android:gravity="center"
                         android:shadowColor="@color/black"
                         android:text="@string/genero"
                         android:textColor="@color/material_dynamic_neutral10"
@@ -199,11 +199,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center_vertical"
-                        android:layout_margin="@dimen/margen_reducido"
-                        android:layout_marginTop="@dimen/margen_basico"
-                        android:layout_weight="1"
                         android:height="@dimen/altura_cuadro_texto"
                         android:backgroundTint="@color/black"
+                        android:gravity="center"
                         android:shadowColor="@color/black"
                         android:text="@string/titulo"
                         android:textColor="@color/material_dynamic_neutral10"
@@ -213,8 +211,9 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="2"
                     android:background="@color/material_dynamic_primary90"
                     android:backgroundTint="@color/material_dynamic_primary90"
                     android:orientation="vertical">
@@ -223,10 +222,7 @@
                         android:id="@+id/spinnerPlataforma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:layout_marginTop="@dimen/margen_basico"
-                        android:layout_weight="1"
-                        android:background="@color/material_dynamic_primary90"
+                        android:layout_gravity="center"
                         android:backgroundTint="@color/material_dynamic_primary90"
                         android:minHeight="@dimen/altura_cuadro_texto" />
 
@@ -234,9 +230,7 @@
                         android:id="@+id/spinnerGenero"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:layout_weight="1"
-                        android:background="@color/material_dynamic_primary90"
+                        android:layout_gravity="center"
                         android:backgroundTint="@color/material_dynamic_primary90"
                         android:minHeight="@dimen/altura_cuadro_texto" />
 
@@ -244,9 +238,7 @@
                         android:id="@+id/spinnerTitulo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:layout_weight="1"
-                        android:background="@color/material_dynamic_primary90"
+                        android:layout_gravity="center"
                         android:backgroundTint="@color/material_dynamic_primary90"
                         android:minHeight="@dimen/altura_cuadro_texto" />
                 </LinearLayout>
@@ -263,15 +255,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <RadioGroup
                     android:id="@+id/radioButtonGrupo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margen_basico"
-                    android:layout_marginBottom="@dimen/margen_basico">
+                    android:layout_marginBottom="@dimen/margen_basico"
+                    android:layout_weight="3">
 
                     <RadioButton
                         android:id="@+id/radioButtonSocio"
@@ -304,21 +297,23 @@
                 </RadioGroup>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textViewPrecio"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center"
                         android:layout_margin="@dimen/margen_reducido"
                         android:layout_marginEnd="@dimen/margen_basico"
                         android:backgroundTint="@color/black"
                         android:shadowColor="@color/black"
                         android:text="@string/precio_unidad"
+                        android:textAlignment="center"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
                         android:textSize="@dimen/tamaño_fuente_pequeña"
@@ -326,7 +321,7 @@
 
                     <TextView
                         android:id="@+id/textViewPrecioMostrar"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_margin="@dimen/margen_reducido"
@@ -334,6 +329,7 @@
                         android:backgroundTint="@color/black"
                         android:gravity="center"
                         android:shadowColor="@color/black"
+                        android:textAlignment="center"
                         android:textColor="@color/material_dynamic_neutral10"
                         android:textColorHighlight="@color/material_dynamic_neutral40"
                         android:textSize="@dimen/tamaño_fuente_pequeña" />
@@ -432,7 +428,7 @@
                     android:id="@+id/buttonSiguiente"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|end"
+                    android:layout_gravity="center_vertical"
                     android:layout_margin="@dimen/margen_reducido"
                     android:height="@dimen/altura_cuadro_texto"
                     android:backgroundTint="@color/material_dynamic_primary70"

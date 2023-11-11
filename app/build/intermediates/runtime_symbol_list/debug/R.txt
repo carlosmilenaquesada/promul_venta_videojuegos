@@ -2208,6 +2208,7 @@ int dimen design_tab_scrollable_min_width 0x7f06008d
 int dimen design_tab_text_size 0x7f06008e
 int dimen design_tab_text_size_2line 0x7f06008f
 int dimen design_textinput_caption_translate_y 0x7f060090
+int dimen dimension_cero 0x7f060327
 int dimen disabled_alpha_material_dark 0x7f060091
 int dimen disabled_alpha_material_light 0x7f060092
 int dimen fastscroll_default_thickness 0x7f060093
@@ -3890,9 +3891,11 @@ int string descuento 0x7f0f0031
 int string desglose 0x7f0f0032
 int string efectivo_en_entrega 0x7f0f0033
 int string elija_la_forma_de_pago 0x7f0f0034
+int string english 0x7f0f00d1
 int string error_a11y_label 0x7f0f0035
 int string error_icon_content_description 0x7f0f0036
 int string es_socio 0x7f0f0037
+int string espa_ol 0x7f0f00d2
 int string exposed_dropdown_menu_content_description 0x7f0f0038
 int string fab_transformation_scrim_behavior 0x7f0f0039
 int string fab_transformation_sheet_behavior 0x7f0f003a

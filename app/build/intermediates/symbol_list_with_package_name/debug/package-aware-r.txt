@@ -2209,6 +2209,7 @@ dimen design_tab_scrollable_min_width
 dimen design_tab_text_size
 dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
+dimen dimension_cero
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
 dimen fastscroll_default_thickness
@@ -3891,9 +3892,11 @@ string descuento
 string desglose
 string efectivo_en_entrega
 string elija_la_forma_de_pago
+string english
 string error_a11y_label
 string error_icon_content_description
 string es_socio
+string espa_ol
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior

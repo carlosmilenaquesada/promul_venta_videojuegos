@@ -14,7 +14,9 @@
     <string name="desglose">Desglose</string>
     <string name="efectivo_en_entrega">Efectivo</string>
     <string name="elija_la_forma_de_pago">Elija la forma de pago</string>
+    <string name="english">English</string>
     <string name="es_socio">Es socio</string>
+    <string name="espa_ol">Español</string>
     <string name="fecha_entrega">Fecha entrega</string>
     <string name="fecha_entrega_hint">Fecha de entrega</string>
     <string name="genero">Género</string>
