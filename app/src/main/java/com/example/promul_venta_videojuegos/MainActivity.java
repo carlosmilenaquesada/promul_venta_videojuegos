@@ -176,24 +176,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	}
 
 	public void irSiguiente(View view){
-		hack();
-		//legal();
-	}
-
-	private void hack(){
-		compra = new Compra("felipefelipefelipefelipefelipefelipe ", "playstation", "acción",
-				"tombraider", 10.0f, 5, "20/03/2023", "07:30", true);
-		Intent intent = new Intent(this, SecondActivity.class);
-		intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
-		startActivity(intent);
-	}
-
-	private void legal(){
 		boolean hayErrores = false;
 		if(!checkBoxCondiciones.isChecked()){
 			hayErrores = true;
 			Toast.makeText(this, getString(R.string.debe_aceptar_condiciones), Toast.LENGTH_SHORT)
-			.show();
+					.show();
 
 		}
 		String nombreUsuario = String.valueOf(editTextNombreUsuario.getText());

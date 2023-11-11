@@ -16,28 +16,28 @@
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_nintendo_mariostrike.png.flat",
-        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\nintendo_mariostrike.png"
-    },
-    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_playstation_horizonmontain.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\playstation_horizonmontain.png"
     },
     {
-        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_xbox_jurassicworldevo2.png.flat",
-        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\xbox_jurassicworldevo2.png"
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_nintendo_mariostrike.png.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\nintendo_mariostrike.png"
     },
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\layout_spinner_desplegado.xml.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\layout\\spinner_desplegado.xml"
     },
     {
-        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_xbox_jurassicworldevo2.png.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\xbox_jurassicworldevo2.png"
     },
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\layout_spinner_desplegado_idioma.xml.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\layout\\spinner_desplegado_idioma.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
         "merged": "com.example.promul_venta_videojuegos.app-merged_res-31:/layout_activity_main.xml.flat",
@@ -86,6 +86,10 @@
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_nintendo_kindommagestic.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\nintendo_kindommagestic.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\layout-land_activity_main.xml.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\layout-land\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_nintendo_monsterhunterrise.png.flat",
@@ -198,6 +202,10 @@
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_header_background.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\drawable\\header_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\layout-land_activity_second.xml.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-main-33:\\layout-land\\activity_second.xml"
     },
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.promul_venta_videojuegos.app-merged_res-31:\\drawable_ic_launcher_foreground.xml.flat",

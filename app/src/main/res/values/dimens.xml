@@ -14,6 +14,7 @@
     <dimen name="tamaño_fuente_basica">24sp</dimen>
     <dimen name="tamaño_fuente_grande">34sp</dimen>
     <dimen name="margen_mediano">15dp</dimen>
+    <dimen name="margen_muy_grande">100dp</dimen>
     <dimen name="dimension_cero">0dp</dimen>
 
 

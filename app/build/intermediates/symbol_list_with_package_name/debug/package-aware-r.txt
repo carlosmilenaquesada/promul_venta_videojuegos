@@ -2609,6 +2609,7 @@ dimen m3_toolbar_text_size_title
 dimen margen_basico
 dimen margen_grande
 dimen margen_mediano
+dimen margen_muy_grande
 dimen margen_muy_reducido
 dimen margen_reducido
 dimen material_bottom_sheet_max_width
@@ -3334,6 +3335,13 @@ id legacy
 id line1
 id line3
 id linear
+id linearLayout
+id linearLayout2
+id linearLayout3
+id linearLayout4
+id linearLayout5
+id linearLayout6
+id linearLayout7
 id listMode
 id list_item
 id m3_side_sheet

@@ -268,7 +268,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonSocio"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:height="@dimen/altura_cuadro_texto"
                         android:backgroundTint="@color/black"
@@ -282,7 +282,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonNoSocio"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:height="@dimen/altura_cuadro_texto"
                         android:backgroundTint="@color/black"

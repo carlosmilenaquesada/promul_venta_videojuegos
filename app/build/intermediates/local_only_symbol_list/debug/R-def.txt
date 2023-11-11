@@ -10,6 +10,7 @@ dimen dimension_cero
 dimen margen_basico
 dimen margen_grande
 dimen margen_mediano
+dimen margen_muy_grande
 dimen margen_muy_reducido
 dimen margen_reducido
 dimen tamaño_fuente_basica
@@ -61,6 +62,13 @@ id editTextNombreUsuario
 id editTextPasswordUsuario
 id imageViewLogotipo
 id imageViewPortadaJuego
+id linearLayout
+id linearLayout2
+id linearLayout3
+id linearLayout4
+id linearLayout5
+id linearLayout6
+id linearLayout7
 id radioButtonGrupo
 id radioButtonNoSocio
 id radioButtonPagoEfectivo

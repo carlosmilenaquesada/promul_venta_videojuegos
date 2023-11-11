@@ -2608,6 +2608,7 @@ int dimen m3_toolbar_text_size_title 0x7f06021c
 int dimen margen_basico 0x7f06021d
 int dimen margen_grande 0x7f06021e
 int dimen margen_mediano 0x7f06021f
+int dimen margen_muy_grande 0x7f060328
 int dimen margen_muy_reducido 0x7f060220
 int dimen margen_reducido 0x7f060221
 int dimen material_bottom_sheet_max_width 0x7f060222
@@ -3333,6 +3334,13 @@ int id legacy 0x7f0800f4
 int id line1 0x7f0800f5
 int id line3 0x7f0800f6
 int id linear 0x7f0800f7
+int id linearLayout 0x7f08022d
+int id linearLayout2 0x7f08022e
+int id linearLayout3 0x7f08022f
+int id linearLayout4 0x7f080230
+int id linearLayout5 0x7f080231
+int id linearLayout6 0x7f080232
+int id linearLayout7 0x7f080233
 int id listMode 0x7f0800f8
 int id list_item 0x7f0800f9
 int id m3_side_sheet 0x7f0800fa

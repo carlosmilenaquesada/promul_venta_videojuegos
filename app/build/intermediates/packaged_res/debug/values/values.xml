@@ -10,6 +10,7 @@
     <dimen name="margen_basico">8dp</dimen>
     <dimen name="margen_grande">20dp</dimen>
     <dimen name="margen_mediano">15dp</dimen>
+    <dimen name="margen_muy_grande">100dp</dimen>
     <dimen name="margen_muy_reducido">3dp</dimen>
     <dimen name="margen_reducido">5dp</dimen>
     <dimen name="tamaño_fuente_basica">24sp</dimen>
