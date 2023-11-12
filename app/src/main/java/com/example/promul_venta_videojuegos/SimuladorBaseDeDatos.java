@@ -26,6 +26,7 @@ public class SimuladorBaseDeDatos{
 		public int getPortadaId(){
 			return portadaId;
 		}
+
 	}
 
 	public static final JuegoPrecioPortada[][] listaPs5 = {new JuegoPrecioPortada[]{

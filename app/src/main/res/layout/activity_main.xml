@@ -435,7 +435,7 @@
                     android:minHeight="@dimen/altura_cuadro_texto"
                     android:onClick="irSiguiente"
                     android:text="@string/siguiente"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/letra_boton" />
 
             </LinearLayout>
         </LinearLayout>

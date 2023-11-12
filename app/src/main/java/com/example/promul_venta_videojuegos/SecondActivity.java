@@ -1,5 +1,6 @@
 package com.example.promul_venta_videojuegos;
 
+import static com.example.promul_venta_videojuegos.MainActivity.IDIOMA;
 import static com.example.promul_venta_videojuegos.MainActivity.PRIMER_ACTIVITY_COMPRA;
 
 import android.content.Intent;
@@ -9,10 +10,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 public class SecondActivity extends AppCompatActivity{
 	TextView nombreClienteMostrar;
@@ -41,12 +44,21 @@ public class SecondActivity extends AppCompatActivity{
 	float totalAPagar = 0.0f;
 	DecimalFormat df;
 
+	Locale locale;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_second);
+
 		Intent intent = getIntent();
 		if(intent != null){
+			//Establecer el mismo idioma que en el MainActivity
+			locale = (Locale) intent.getSerializableExtra(IDIOMA);
+			getResources().getConfiguration().setLocale(locale);
+			getResources().updateConfiguration(getResources().getConfiguration(), getResources().getDisplayMetrics());
+			//El idioma no puede establcerse a través del savedInstanceState, debe guardarse en una
+			//variable Locale, y ser cargado manualmente. Tras la carga, es necesario repintar el activity,
+			//por eso pongo el onCreate justo después, para aprovechar el re-cargado.
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.activity_second);
 			nombreClienteMostrar = findViewById(R.id.textViewSecondNombreClienteMostrar);
 			plataformaMostrar = findViewById(R.id.textViewSecondPlataformaMostrar);
 			generoMostrar = findViewById(R.id.textViewSecondGeneroMostrar);
@@ -69,8 +81,17 @@ public class SecondActivity extends AppCompatActivity{
 			//------------------------------------------------------------------------------------------
 			rellenarDesgloseImporte();
 		}else{
+			//Si el intent está vacío, es que ha ocurrido algún problema en la optención de datos,
+			//por lo tanto, finalizo el programa.
 			this.finishAffinity();
 		}
+
+	}
+
+	@Override
+	protected void onSaveInstanceState(@NonNull Bundle outState){
+		super.onSaveInstanceState(outState);
+		outState.putSerializable("locale", locale);
 	}
 
 	private void rellenarDatosCompra(Intent intent){

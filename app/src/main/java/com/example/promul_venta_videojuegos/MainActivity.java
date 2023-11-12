@@ -6,8 +6,6 @@ import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaJue
 import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaPlataformas;
 
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +25,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -34,6 +33,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 	public static final String PRIMER_ACTIVITY_COMPRA =
 			"promul_venta_videojuegos.MainActivity" + ".PRIMER_ACTIVITY_COMPRA";
+	public static final String IDIOMA = "promul_venta_videojuegos.MainActivity.IDIOMA";
 	EditText editTextNombreUsuario;
 	EditText editTextPasswordUsuario;
 	Spinner spinnerPlataforma;
@@ -58,10 +58,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	Compra compra;
 	JuegoPrecioPortada juegoPrecioPortada;
 	DecimalFormat dm;
+	Locale locale;
 
 	@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
+		if(savedInstanceState != null){
+			titulo = savedInstanceState.getInt("titulo");
+			//El idioma personalizado no se establece automáticamente mediante savedInstanceState,
+			// así
+			// que debe guardarse en una  variable Locale en el método onSaveInstanceState(), y ser
+			// cargado manualmente. Tras la carga, es necesario repintar el activity,
+			//por eso pongo el onCreate justo después, para aprovechar el re-cargado.
+			Serializable s = savedInstanceState.getSerializable("locale");
+			if(s != null){
+				locale = (Locale) s;
+				cambiarIdioma(locale.getLanguage());
+			}
+		}
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		editTextNombreUsuario = findViewById(R.id.editTextNombreUsuario);
@@ -85,17 +99,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		buttonComprar = findViewById(R.id.buttonSiguiente);
 		juegoPrecioPortada = new JuegoPrecioPortada();
 		dm = new DecimalFormat("0.00");
+		locale = getResources().getConfiguration().getLocales().get(0);
 	}
 
 	@Override
 	protected void onSaveInstanceState(@NonNull Bundle outState){
 		super.onSaveInstanceState(outState);
+		outState.putInt("titulo", titulo);
+		outState.putSerializable("locale", locale);
 	}
 
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
 		int parentId = parent.getId();
-		titulo = 0;
 		if(parentId == R.id.spinnerPlataforma){
 			plataforma = position;
 		}else{
@@ -109,12 +125,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		}
 		JuegoPrecioPortada[][] plat = (JuegoPrecioPortada[][]) listaJuegos[plataforma];
 		JuegoPrecioPortada[] platGen = plat[genero];
-		adapterTitulo.clear();
-		ArrayList<String> titulos = new ArrayList<>();
-		for(JuegoPrecioPortada jp : platGen){
-			titulos.add(jp.getNombreJuego());
+		if(parentId != R.id.spinnerTitulo){
+			adapterTitulo.clear();
+			ArrayList<String> titulos = new ArrayList<>();
+			for(JuegoPrecioPortada jp : platGen){
+				titulos.add(jp.getNombreJuego());
+			}
+			adapterTitulo.addAll(titulos);
 		}
-		adapterTitulo.addAll(titulos);
+		spinnerTitulo.setSelection(titulo);
 		juegoPrecioPortada = new JuegoPrecioPortada(platGen[titulo].getNombreJuego(),
 				platGen[titulo].getPrecioJuego(), platGen[titulo].getPortadaId());
 		imageViewPortadaJuego.setImageResource(juegoPrecioPortada.getPortadaId());
@@ -122,19 +141,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	}
 
 	public void setLocale(View view){
-		Resources resources = getResources();
-		Configuration config = resources.getConfiguration();
-		String idioma = config.getLocales().get(0).toLanguageTag();
-		Locale locale;
-		if(idioma.equals("es")){
-			locale = new Locale("en-us");
-		}else {
-			locale = new Locale("es");
+		String idiomaActual = locale.getLanguage();
+		String idiomaNuevo;
+		if(idiomaActual.equals("es")){
+			idiomaNuevo = "en-us";
+		}else{
+			idiomaNuevo = "es";
 		}
-
-		config.setLocale(locale);
-		resources.updateConfiguration(config, resources.getDisplayMetrics());
+		cambiarIdioma(idiomaNuevo);
 		recreate();
+	}
+
+	public void cambiarIdioma(String codigoNuevoIdioma){
+		this.locale = new Locale(codigoNuevoIdioma);
+		getResources().getConfiguration().setLocale(locale);
+		getResources().updateConfiguration(getResources().getConfiguration(),
+				getResources().getDisplayMetrics());
 	}
 
 	public void actualizarPrecioJuego(){
@@ -179,9 +201,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		boolean hayErrores = false;
 		if(!checkBoxCondiciones.isChecked()){
 			hayErrores = true;
-			Toast.makeText(this, getString(R.string.debe_aceptar_condiciones), Toast.LENGTH_SHORT)
-					.show();
-
+			Toast.makeText(this, getString(R.string.debe_aceptar_condiciones), Toast.LENGTH_SHORT).show();
 		}
 		String nombreUsuario = String.valueOf(editTextNombreUsuario.getText());
 		if(nombreUsuario.isEmpty()){
@@ -215,6 +235,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					radioButtonSocio.isChecked());
 			Intent intent = new Intent(this, SecondActivity.class);
 			intent.putExtra(PRIMER_ACTIVITY_COMPRA, compra);
+			intent.putExtra(IDIOMA, locale);
 			startActivity(intent);
 		}
 	}
@@ -235,7 +256,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	}
 
 	public void crearHora(int hourOfDay, int minute){
-		String hora = hourOfDay + ":" + minute;
+		String horas = hourOfDay < 10 ? "0" + hourOfDay : "" + hourOfDay;
+		String minutos = minute < 10 ? "0" + minute : "" + minute;
+		String hora = horas + ":" + minutos;
+		if(hourOfDay < 12){
+			hora += " AM";
+		}else{
+			hora += " PM";
+		}
 		editTextHoraEntrega.setText(hora);
 	}
 }

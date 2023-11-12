@@ -3,5 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="cabecera_letra">#473535</color>
+    <color name="letra_boton">#283593</color>
+
 
 </resources>
