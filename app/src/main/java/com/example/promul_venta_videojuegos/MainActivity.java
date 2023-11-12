@@ -6,7 +6,7 @@ import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaJue
 import static com.example.promul_venta_videojuegos.SimuladorBaseDeDatos.listaPlataformas;
 
 import android.content.Intent;
-import android.os.Build;
+//import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,7 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
+//import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.Serializable;
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	DecimalFormat dm;
 	Locale locale;
 
-	@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+	//@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		if(savedInstanceState != null){
